@@ -15,6 +15,7 @@ const config: Config = {
       "2xl": "1536px",
       "3xl": "1920px",
     },
+
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 }

@@ -6,6 +6,7 @@ import GlobalModalWrapper from "@/common/components/GlobalModalWrapper"
 import { Toaster } from "react-hot-toast"
 import React from "react"
 import { APP_NAME } from "@repo/constants"
+import Header from "@/module/LandingPage/components/Header"
 
 const nunito = Nunito({ subsets: ["latin"] })
 
@@ -26,6 +27,7 @@ export default async function RootLayout({
         <Toaster />
         <QueryClientWrapper>
           <GlobalModalWrapper>
+            <Header/>
             <div className="min-h-screen">{children}</div>
           </GlobalModalWrapper>
         </QueryClientWrapper>
