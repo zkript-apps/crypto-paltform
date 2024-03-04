@@ -7,8 +7,8 @@ import Image from 'next/image'
 import Link from 'next/link';
 
 const navigation = [
-  { name: 'HOME', href: '/' },
-  { name: 'AGI', href: '/' },
+  { name: 'HOME', href: '/Home' },
+  { name: 'AGI', href: '/About' },
 ]
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolling(window.scrollY > 50); // Change 50 to the desired scroll threshold
+      setScrolling(window.scrollY > 50);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -34,22 +34,23 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`z-10 bg-white sticky top-0 ${scrolling ? 'small-header' : ''}`}>
-      <nav className="flex items-center justify-between lg:px-8" aria-label="Global">
-        <a href="#" className={`flex -m-5 items-center ${scrolling ? 'small-logo' : ''}`}>
-            <Image
-              src="/logo.png"
-              alt="Company"
-              width={scrolling ? 60 : 100}
-              height={scrolling ? 60 : 100}
-              className="mx-auto h-auto w-auto rounded-lg transition-all duration-300 ease-in-out"
-            />
+    <header className={`z-10  bg-white sticky top-0 ${scrolling ? 'small-header' : ''}`}>
+      <nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between" aria-label="Global">
+        <a href="#" className={`flex m-2.5 ml-16 items-center justify-center`}>
+        <Image
+          src="/logo.png"
+          alt="Company"
+          width={100}
+          height={100}
+          className="mx-auto h-auto w-auto rounded-lg"
+          style={{
+            width: scrolling ? '62px' : '150px',
+            height: scrolling ? '38px' : '95px',
+            transition: 'width 0.4s ease, height 0.4s ease',
+          }}
+        />
        
-            <div className='flex flex-col -space-y-4'>
-             {/* <div className="mt-10 ml-2 text-[2.8rem] font-medium">SaferSite</div> */}
-             {/* <div className="ml-14 font-medium text-[1.2rem]">Powered by Cavalry</div> */}
-             
-             </div>
+          
         </a>
         <div className="flex lg:hidden">
           <button
@@ -61,22 +62,22 @@ export default function Header() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12 justify-center items-center mt-2 mr-32">
+        <div className={'hidden lg:flex lg:gap-x-12 justify-center items-center'}>
           {navigation.map((item) => (
            <Link key={item.name} href={item.href}>
            <button
-             onClick={() => handleNavigationClick(item)}
+             onClick={() => handleNavigationClick(item) } 
              className={`${
-               activeNavItem === item ? ' text-[#df33e7]' : ''
-             } text-md font-normal leading-6 text-gray-500`}
+               activeNavItem === item ? ' text-[#df33e7] ' : ' text-gray-500'
+             } text-sm font-normal leading-6`}
            >
              {item.name}
            </button>
          </Link>
           ))}   
           
-          <a href="#" className="text-md font-normal leading-6 text-gray-500">
-            LOGIN
+          <a href="#" className="mr-24 text-sm font-normal leading-6 text-gray-500">
+            LOG IN
           </a>
 
           

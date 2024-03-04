@@ -12,13 +12,6 @@
   transition: height 0.4s ease;
 }
 
-.small-logo {
-  transition: width 0.3s, height 0.3s ease;
-}
-
-.transition-all {
-  transition: all 300ms ease-in-out;
-}
 
 header {
   height: 115px; 
