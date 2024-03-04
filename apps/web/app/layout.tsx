@@ -30,9 +30,10 @@ export default async function RootLayout({
           <GlobalModalWrapper>
             <Header/>
             <div className="min-h-screen">{children}</div>
-            <Footer/>
+          <Footer/>
           </GlobalModalWrapper>
         </QueryClientWrapper>
+        
       </body>
     </html>
   )

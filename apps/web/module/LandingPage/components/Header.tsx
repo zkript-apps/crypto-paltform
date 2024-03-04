@@ -59,7 +59,10 @@ export default function Header() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon 
+           
+            color='#dc0bb4'
+            className="h-7 w-7 mr-16" aria-hidden="true" />
           </button>
         </div>
         <div className={'hidden lg:flex lg:gap-x-12 justify-center items-center'}>
@@ -94,7 +97,7 @@ export default function Header() {
               alt="Your Company"
               width={100}
               height={100}
-              className="mx-auto h-10 w-auto"
+              className="mx-auto h-10 w-auto rounded-lg"
             />
             </a>
             <button
