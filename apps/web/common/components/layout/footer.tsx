@@ -27,13 +27,14 @@ const navigation = {
         <div className="mx-auto max-w-7xl px-6 pb-16 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
           <div className="xl:grid xl:grid-cols-4 md:grid-cols-2 xl:gap-8">
             <div className="">
-            <Image
+            {/* <Image
               src="/logo.png"
               alt="Your Company"
               width={100}
               height={100}
               className=" h-24 w-auto lg:ml-20 ml-10"
-            />
+            /> */}
+            <div  className=" h-24 w-auto text-[5rem] lg:ml-20 ml-10 text-white">AGI</div>
                
             </div>
            <div></div>
@@ -74,7 +75,7 @@ const navigation = {
           
         </div>
         <div className="bg-[#2c2c2c] h-auto">
-        <div className="mx-auto max-w-7xl text-center text-sm ">
+        <div className="mx-auto max-w-7xl text-center text-sm">
           <div className="h-[3rem] text-white grid lg:grid-cols-7 justify-center items-center md:grid-cols-4 grid-cols-2 lg:ml-24">
             <a>Change privacy settings</a>
             <a>History of privacy settings</a>

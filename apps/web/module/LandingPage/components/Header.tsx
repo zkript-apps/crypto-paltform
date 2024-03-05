@@ -23,7 +23,6 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // Set a threshold value (e.g., 50) to determine when to update scrolling state
       const scrollThreshold = 1;
       const shouldScroll = window.scrollY > scrollThreshold;
   
@@ -43,18 +42,20 @@ export default function Header() {
     <header className={`z-10  bg-white sticky top-0 ${scrolling ? 'small-header' : ''}`}>
       <nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between" aria-label="Global">
         <a href="#" className={`flex m-2.5 ml-16 items-center justify-center`}>
+          
         <Image
-          src="/logo.png"
+          src="/agiPlaceholderImage.png"
           alt="Company"
           width={100}
           height={100}
           className="mx-auto h-auto w-auto rounded-lg"
           style={{
-            width: scrolling ? '62px' : '150px',
-            height: scrolling ? '38px' : '95px',
+            width: scrolling ? '75px' : '180px',
+            height: scrolling ? '40px' : '95px',
             transition: 'width 0.4s ease, height 0.4s ease',
           }}
         />
+        
        
           
         </a>
@@ -78,14 +79,14 @@ export default function Header() {
              onClick={() => handleNavigationClick(item) } 
              className={`${
                activeNavItem === item ? ' text-[#df33e7] ' : ' text-gray-500'
-             } text-sm font-normal leading-6`}
+             } text-md font-bold leading-6 `}
            >
              {item.name}
            </button>
          </Link>
           ))}   
           
-          <a href="#" className="mr-24 text-sm font-normal leading-6 text-gray-500">
+          <a href="#" className="mr-24 text-md font-bold leading-6 text-gray-500">
             LOG IN
           </a>
 
@@ -98,13 +99,14 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Company</span>
-              <Image
+              {/* <Image
               src="/logo.png"
               alt="Your Company"
               width={100}
               height={100}
               className="mx-auto h-10 w-auto rounded-lg"
-            />
+            /> */}
+            <h1>AGI</h1>
             </a>
             <button
               type="button"
