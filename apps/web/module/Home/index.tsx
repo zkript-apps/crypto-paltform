@@ -31,9 +31,9 @@ export default function Home() {
     <div>
       YOU CAN BUY TOKENS HERE
     </div>
-    <div className="opacity-0 ml-2 text-[]transition-opacity duration-300 group-hover:opacity-100">
+    {/* <div className="opacity-0 ml-2 text-[]transition-opacity duration-300 group-hover:opacity-100">
       &gt;
-    </div>
+    </div> */}
   </div>
 </button>
             </div>
@@ -41,10 +41,10 @@ export default function Home() {
 
         </div>
         <div className='grid mb-auto w-full h-auto justify-center items-center'>
-          <div className="lg:flex grid w-auto lg:grid-cols-2 grid-cols-1 lg:m-0 h-auto justify-center mx-auto">
-            <div className="border-[#dc0bb4] border lg:h-[42rem] lg:w-[39rem] lg:-ml-[5.5rem] lg:-mt-[11.8rem] lg:mx-0 mx-[4rem] bg-white flex items-center"> {/* Updated this line */}
-              <div className="lg:ml-16 my-[5rem] lg:mr-40 text-justify lg:w-[25rem] lg:mx-10 mx-5 h-auto">
-                <h1 className="font-bold lg:text-[3rem] lg:pt-20 text-[1.5rem]">Lorem Ipsum</h1>
+        <div className="lg:flex grid w-auto lg:grid-cols-2 grid-cols-1 lg:m-0 h-auto justify-center mx-auto">
+            <div className="border-[#dc0bb4] border lg:h-auto lg:w-[39rem] lg:mb-[12rem] lg:-ml-[5.5rem] lg:-mt-[12rem] lg:mx-0 mx-[4rem] bg-white flex items-center"> {/* Updated this line */}
+              <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-[25rem] lg:mx-10 mx-5 h-auto">
+                <h1 className="font-bold lg:text-[3rem] text-[1.5rem] h-auto">Lorem Ipsum</h1>
                 <p className="mt-5 text-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                   ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris nisi ut aliquip ex ea commodo consequat. </p>
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="mx-auto max-w-7xl px-6 pt-16 sm:pt-24 lg:px-8 lg:pt-32 items-center justify-center">
             <div className="flex-col ml-20 mt-16 mx-auto">
               <h1 className=" text-[#dc0bb4] font-bold text-sm">SERVICES</h1>
-              <h1 className=" text-white lg:text-[50px] font-bold font-sans text-[30px]">News from the scene...</h1>
+              <h1 className=" text-white lg:text-[50px] font-bold font-sans pb-32 text-[30px]">News from the scene...</h1>
             </div>
 
 

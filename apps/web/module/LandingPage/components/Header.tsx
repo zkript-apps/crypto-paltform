@@ -9,6 +9,7 @@ import Link from 'next/link';
 const navigation = [
   { name: 'HOME', href: '/Home' },
   { name: 'AGI', href: '/About' },
+  { name: 'MY ACCOUNT', href: '/MyAccount' },
 ]
 
 export default function Header() {
@@ -21,37 +22,37 @@ export default function Header() {
     setActiveNavItem(item);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = 1;
-      const shouldScroll = window.scrollY > scrollThreshold;
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const scrollThreshold = 1;
+  //     const shouldScroll = window.scrollY > scrollThreshold;
   
-      if (shouldScroll !== scrolling) {
-        setScrolling(shouldScroll);
-      }
-    };
+  //     if (shouldScroll !== scrolling) {
+  //       setScrolling(shouldScroll);
+  //     }
+  //   };
   
-    window.addEventListener('scroll', handleScroll);
+  //   window.addEventListener('scroll', handleScroll);
   
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [scrolling]);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [scrolling]);
 
   return (
-    <header className={`z-10  bg-white sticky top-0 ${scrolling ? 'small-header' : ''}`}>
-      <nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between" aria-label="Global">
+    <header className={`z-10  bg-white sticky h-auto top-0 ${scrolling ? '' : ''}`}>
+      <nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between" aria-label="Global">
         <a href="#" className={`flex m-2.5 ml-16 items-center justify-center`}>
           
         <Image
           src="/agiPlaceholderImage.png"
           alt="Company"
-          width={100}
-          height={100}
+          width={65}
+          height={65}
           className="mx-auto h-auto w-auto rounded-lg"
           style={{
-            width: scrolling ? '75px' : '180px',
-            height: scrolling ? '40px' : '95px',
+            width: scrolling ? '' : '',
+            height: scrolling ? '' : '',
             transition: 'width 0.4s ease, height 0.4s ease',
           }}
         />
