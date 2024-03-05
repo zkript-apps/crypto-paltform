@@ -23,15 +23,21 @@ export default function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolling(window.scrollY > 50);
+      // Set a threshold value (e.g., 50) to determine when to update scrolling state
+      const scrollThreshold = 1;
+      const shouldScroll = window.scrollY > scrollThreshold;
+  
+      if (shouldScroll !== scrolling) {
+        setScrolling(shouldScroll);
+      }
     };
-
+  
     window.addEventListener('scroll', handleScroll);
-    
+  
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [scrolling]);
 
   return (
     <header className={`z-10  bg-white sticky top-0 ${scrolling ? 'small-header' : ''}`}>

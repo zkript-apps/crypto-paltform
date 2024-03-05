@@ -73,9 +73,9 @@ const navigation = {
          
           
         </div>
-        <div className="bg-zinc-700 h-auto">
+        <div className="bg-[#2c2c2c] h-auto">
         <div className="mx-auto max-w-7xl text-center text-sm ">
-          <div className="h-[3rem] text-white grid lg:grid-cols-7 justify-center items-center md:grid-cols-4 grid-cols-2 ml-24">
+          <div className="h-[3rem] text-white grid lg:grid-cols-7 justify-center items-center md:grid-cols-4 grid-cols-2 lg:ml-24">
             <a>Change privacy settings</a>
             <a>History of privacy settings</a>
             <a>Revoke consent</a>
@@ -84,7 +84,7 @@ const navigation = {
            
           </div>
           </div>
-        <div className="w-full h-4 bg-slate-900"></div>
+        <div className="w-full h-4 bg-black"></div>
       </footer>
     )
   }
