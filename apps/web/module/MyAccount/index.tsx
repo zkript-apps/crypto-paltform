@@ -32,8 +32,8 @@ export default function MyAccount() {
       `}</style>
       <div className="lg:mx-auto mb-auto items-center justify-between">
         
-        <div className='grid bg-slate-900 w-full lg:h-auto  h-auto justify-center items-center text-center '>
-        <div className="lg:mx-0 mx-10">
+        <div className='grid bg-slate-900 w-full lg:h-auto justify-center items-center text-center '>
+        <div className="mx-10">
           <h1 className="py-28 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-semibold font-sans">AGI | My Account</h1>
 
           <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
@@ -133,7 +133,7 @@ export default function MyAccount() {
         </div>
         
         <RegisterWalletModal isOpen={isWalletRegisterOpen} onClose={() => setIsWalletRegisterOpen(false)}/>
-        <TransferDetailsModal isOpen={isOrderOpen} onClose={() => setIsOrderOpen(false)}/>
+        <OrderModal isOpen={isOrderOpen} onClose={() => setIsOrderOpen(false)}/>
         
 
       

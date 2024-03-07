@@ -62,7 +62,7 @@ export default function Header() {
        
           
         </a>
-        <div className="flex lg:hidden">
+        <div className="flex lg:hidden py-6">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
