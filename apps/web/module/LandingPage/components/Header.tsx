@@ -8,9 +8,9 @@ import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
 
 const navigation = [
-  { name: 'HOME', href: '/Home' },
-  { name: 'AGI', href: '/About' },
-  { name: 'MY ACCOUNT', href: '/MyAccount' },
+  { name: 'HOME', href: '/home' },
+  { name: 'AGI', href: '/about' },
+  { name: 'MY ACCOUNT', href: '/my-account' },
   
 ]
 

@@ -25,7 +25,7 @@ export class EmailService {
     this.AWS_REGION = process.env.AWS_REGION || ''
     this.AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY || ''
     this.AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || ''
-    this.DEFAULT_SENDER = `"${APP_NAME}" <no-reply@exploresiargao.com>`
+    this.DEFAULT_SENDER = `"Crypto Platform" <no-reply@exploresiargao.com>`
 
     this.config = {
       region: this.AWS_REGION,
