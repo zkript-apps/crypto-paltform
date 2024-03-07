@@ -1,5 +1,3 @@
-import { T_BackendResponse } from "@repo/contract"
-
 export class ApiService {
   private BASE_URL: string | undefined
 
@@ -26,11 +24,11 @@ export class ApiService {
     return options
   }
 
-  async get<T = T_BackendResponse>(
+  async get(
     endpoint: string,
     params?: Record<string, any>,
     signal?: AbortSignal
-  ): Promise<T> {
+  ) {
     const reqParams = new URLSearchParams(params).toString()
     const otherOptions = this.constructOptions()
     const res = fetch(
@@ -43,12 +41,12 @@ export class ApiService {
     return (await res).json()
   }
 
-  async post<T = T_BackendResponse>(
+  async post(
     endpoint: string,
     body: any,
     raw?: boolean,
     removeContentType?: boolean
-  ): Promise<T> {
+  ) {
     const otherOptions = this.constructOptions(removeContentType)
     const res = fetch(`${this.BASE_URL}${endpoint}`, {
       method: "POST",
@@ -58,12 +56,12 @@ export class ApiService {
     return (await res).json()
   }
 
-  async patch<T = T_BackendResponse>(
+  async patch(
     endpoint: string,
     body?: any,
     raw?: boolean,
     removeContentType?: boolean
-  ): Promise<T> {
+  ) {
     const otherOptions = this.constructOptions(removeContentType)
     const res = fetch(`${this.BASE_URL}${endpoint}`, {
       method: "PATCH",
@@ -73,12 +71,12 @@ export class ApiService {
     return (await res).json()
   }
 
-  async delete<T = T_BackendResponse>(
+  async delete(
     endpoint: string,
     body?: any,
     raw?: boolean,
     removeContentType?: boolean
-  ): Promise<T> {
+  ) {
     const otherOptions = this.constructOptions(removeContentType)
     const res = fetch(`${this.BASE_URL}${endpoint}`, {
       method: "DELETE",
