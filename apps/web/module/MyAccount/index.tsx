@@ -1,18 +1,25 @@
 "use client";
 
-import ModalContainer from "@/common/components/modals/ModalContainer";
+import OrderModal from "@/common/components/modals/OrderModal";
 import RegisterWalletModal from "@/common/components/modals/RegisterWalletModal";
 import { useState } from "react";
 
 export default function MyAccount() {
  
   const [isWalletRegisterOpen, setIsWalletRegisterOpen] = useState(false)
+  const [isOrderOpen, setIsOrderOpen] = useState(false)
 
-  function handleButtonClick(): void {
+  function walletRegisterClick(): void {
 
   setIsWalletRegisterOpen(true)
   
   }
+
+  function orderClick(): void {
+
+    setIsOrderOpen(true)
+    
+    }
 
 
   return (
@@ -24,23 +31,25 @@ export default function MyAccount() {
       `}</style>
       <div className="lg:mx-auto mb-auto items-center justify-between">
         
-        <div className='grid py-10 bg-slate-900 w-full lg:h-auto  h-auto justify-center items-center text-center '>
+        <div className='grid bg-slate-900 w-full lg:h-auto  h-auto justify-center items-center text-center '>
         <div className="lg:mx-0 mx-10">
-          <h1 className="mt-20 text-white lg:text-[6rem] md:text-[35px] sm:text-[25px] font-semibold font-sans">AGI | My Account</h1>
-
-          <div className="bg-white w-full lg:w-auto h-auto py-5 rounded-2xl mt-20 border-[#dc0bb4] border justify-center items-center flex">
-            <div className="m-5">
-              <button
-                onClick={() => handleButtonClick()}
-                type="button"
-                className="text-[1.6rem] relative shadow-lg rounded-md bg-[#dc0bb4] px-5 py-5 text-sm font-normal text-white hover:bg-indigo-900 overflow-hidden group">
-                Wallet Register
-              </button>
-            </div>
-          </div>
+          <h1 className="py-28 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-semibold font-sans">AGI | My Account</h1>
 
           <div className="bg-white w-full lg:w-[100rem] h-auto py-8 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
-           
+            <button
+                onClick={() => walletRegisterClick()}
+                type="button"
+                className="text-[1.2rem] relative shadow-lg rounded-md bg-[#dc0bb4] px-5 w-[12%] py-4 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
+                Wallet Register
+              </button>
+          </div>
+          <div className="bg-white w-full lg:w-[100rem] h-auto py-8 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
+            <button
+                onClick={() => orderClick()}
+                type="button"
+                className="text-[1.2rem] relative shadow-lg rounded-md bg-[#dc0bb4] px-5 w-[12%] py-4 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
+                Order
+              </button>
           </div>
 
           <div className="bg-white flex-col w-full lg:w-[100rem] h-auto py-10 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
@@ -123,7 +132,7 @@ export default function MyAccount() {
         </div>
         
         <RegisterWalletModal isOpen={isWalletRegisterOpen} onClose={() => setIsWalletRegisterOpen(false)}/>
-      
+        <OrderModal isOpen={isOrderOpen} onClose={() => setIsOrderOpen(false)}/>
         
 
       

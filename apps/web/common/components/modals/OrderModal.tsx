@@ -10,7 +10,7 @@ interface AddUserProps {
   onClose: () => void
 }
 
-const RegisterWalletModal = ({
+const OrderModal = ({
   isOpen: showModal,
   onClose: hideModal,
 }: AddUserProps) => {
@@ -18,46 +18,32 @@ const RegisterWalletModal = ({
   return (
     <ModalContainer
         size="sm"
-        title="Register"
+        title="Order"
         onClose={hideModal}
         isOpen={showModal}
       >
-           <div className="mx-10 mt-5">
-           <h1 className="text-gray-900 text-[1.5rem] font-semibold">Your blockchain wallet in one click</h1>
-           </div>
-           <div className="grid grid-rows-2 mx-10">
-           <button
-        type="button"
-        className="mt-10 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-        <FaGoogle className="-ml-5 h-8 w-8 mr-2" aria-hidden="true" />
-        Continue with Google
-      </button>
-          <div className="pt-3 grid grid-cols-3 gap-x-3 py-6">
-          <button
-        type="button"
-        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-        <FaFacebook className="h-10 w-10" aria-hidden="true" />
-      </button>
-
-      <button
-        type="button"
-        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-        <FaTwitter className="h-10 w-10" aria-hidden="true" />
-      </button>
-      <button
-        type="button"
-        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5  justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-        <IoLogoDiscord  className="h-10 w-10" aria-hidden="true" />
-      </button>
-          </div>
+           
+           <div className="grid grid-rows-4  mx-10">
+            <div className="grid grid-cols-2">
+                <div>
+                <p>qwewq</p>
+                <p>qwewq</p>
+                </div>
+                <div>
+                <p>qwewq</p>
+                <p>qwewq</p>
+                </div>
+                <div>
+                <p>qwewq</p>
+                <p>qwewq</p>
+                </div>
+            </div>
+          
            </div>
           <div className="mx-10 h-[.02rem] bg-gray-300 my-1">
-           
           </div>
+
+
           <p className="bg-white text-center px-1 mx-[45%]  text-gray-500 -mt-5 text-lg font-semibold">or</p>
 
           <div className="grid grid-rows-2 mx-10">
@@ -104,4 +90,4 @@ const RegisterWalletModal = ({
   )
 }
 
-export default RegisterWalletModal
+export default OrderModal

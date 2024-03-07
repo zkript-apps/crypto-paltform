@@ -76,12 +76,13 @@ const ModalContainer = ({
                     )}
                     <div className="flex-1">
                       <h1
-                        className={`w-full text-center place-self-center font-semibold`}
+                        className={`w-full text-center place-self-center font-bold text-lg`}
                       >
                         {title}
                       </h1>
                     </div>
                   </div>
+            
                   {children}
                 </div>
               </Dialog.Panel>
