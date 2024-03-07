@@ -1,5 +1,4 @@
 import Home from "@/module/Home"
-import { APP_NAME } from "@repo/constants"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

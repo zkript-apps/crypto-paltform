@@ -10,7 +10,6 @@ import {
   Preview,
   Text,
 } from '@react-email/components'
-import { APP_NAME } from '@repo/constants'
 import * as React from 'react'
 import {
   code,
@@ -30,18 +29,18 @@ interface MultiFactorAuthProps {
 export const MultiFactorAuth = ({ validationCode }: MultiFactorAuthProps) => (
   <Html>
     <Head />
-    <Preview>Your multi-factor authentication code for {APP_NAME}</Preview>
+    <Preview>Your multi-factor authentication code for Crypto Platform</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
           src={`${process.env.WEB_URL}/logo-single.png`}
           width="42"
           height="42"
-          alt={APP_NAME}
+          alt="Crypto Platform"
           style={logo}
         />
         <Heading style={heading}>
-          Your multi-factor authentication code for {APP_NAME}
+          Your multi-factor authentication code for Crypto Platform
         </Heading>
         <Text style={paragraph}>
           This code will only be valid for the next 3 minutes.
@@ -49,7 +48,7 @@ export const MultiFactorAuth = ({ validationCode }: MultiFactorAuthProps) => (
         <code style={code}>{validationCode}</code>
         <Hr style={hr} />
         <Link href={process.env.WEB_URL} style={reportLink}>
-          {APP_NAME}
+          Crypto Platform
         </Link>
       </Container>
     </Body>
