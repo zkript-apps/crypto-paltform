@@ -2,6 +2,7 @@
 
 import OrderModal from "@/common/components/modals/OrderModal";
 import RegisterWalletModal from "@/common/components/modals/RegisterWalletModal";
+import TransferDetailsModal from "@/common/components/modals/TransferDetailsModal";
 import { useState } from "react";
 
 export default function MyAccount() {
@@ -35,19 +36,19 @@ export default function MyAccount() {
         <div className="lg:mx-0 mx-10">
           <h1 className="py-28 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-semibold font-sans">AGI | My Account</h1>
 
-          <div className="bg-white w-full lg:w-[100rem] h-auto py-8 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
+          <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
             <button
                 onClick={() => walletRegisterClick()}
                 type="button"
-                className="text-[1.2rem] relative shadow-lg rounded-md bg-[#dc0bb4] px-5 w-[12%] py-4 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
+                className="text-[1.2rem] relative shadow-lg rounded-md bg-[#dc0bb4] px-5 py-4 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
                 Wallet Register
               </button>
           </div>
-          <div className="bg-white w-full lg:w-[100rem] h-auto py-8 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
+          <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-[#dc0bb4] border justify-center items-center flex">
             <button
                 onClick={() => orderClick()}
                 type="button"
-                className="text-[1.2rem] relative shadow-lg rounded-md bg-[#dc0bb4] px-5 w-[12%] py-4 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
+                className="text-[1.2rem] relative shadow-lg rounded-md bg-[#dc0bb4] px-16 py-4 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
                 Order
               </button>
           </div>
@@ -132,7 +133,7 @@ export default function MyAccount() {
         </div>
         
         <RegisterWalletModal isOpen={isWalletRegisterOpen} onClose={() => setIsWalletRegisterOpen(false)}/>
-        <OrderModal isOpen={isOrderOpen} onClose={() => setIsOrderOpen(false)}/>
+        <TransferDetailsModal isOpen={isOrderOpen} onClose={() => setIsOrderOpen(false)}/>
         
 
       

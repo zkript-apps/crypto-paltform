@@ -1,10 +1,6 @@
 
 import React from "react"
 import ModalContainer from "./ModalContainer"
-import {  EnvelopeIcon} from "@heroicons/react/24/outline"
-import { FaFacebook, FaGoogle, FaTwitter  } from "react-icons/fa";
-import { IoLogoDiscord } from "react-icons/io5";
-import Dropdown from "../Dropdown";
 interface AddUserProps {
   isOpen: boolean
   onClose: () => void
@@ -23,69 +19,109 @@ const OrderModal = ({
         isOpen={showModal}
       >
            
-           <div className="grid grid-rows-4  mx-10">
-            <div className="grid grid-cols-2">
-                <div>
-                <p>qwewq</p>
-                <p>qwewq</p>
-                </div>
-                <div>
-                <p>qwewq</p>
-                <p>qwewq</p>
-                </div>
-                <div>
-                <p>qwewq</p>
-                <p>qwewq</p>
-                </div>
-            </div>
-          
-           </div>
-          <div className="mx-10 h-[.02rem] bg-gray-300 my-1">
-          </div>
-
-
-          <p className="bg-white text-center px-1 mx-[45%]  text-gray-500 -mt-5 text-lg font-semibold">or</p>
-
-          <div className="grid grid-rows-2 mx-10">
-           <div className="relative mt-2 rounded-md shadow-sm">
+           <div className="flex-col mx-10">
+           <div className="mt-2">
+      <label htmlFor="email" className="block text-md font-medium leading-6 text-gray-900">
+      Salesperson:
+      </label>
+      <div className="">
         <input
-           type="email"
-           name="email"
-           id="email"
-           className="block lg:text-lg w-full px-5 rounded-md border-0 py-6 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dc0bb4] sm:text-sm sm:leading-6"
-           placeholder="you@example.com"
+          type="email"
+          name="email"
+          id="email"
+          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dc0bb4] sm:text-sm sm:leading-6"
+          placeholder=""
+          aria-describedby="email-description"
         />
-        <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-          <EnvelopeIcon className="h-8 w-8 text-gray-400" aria-hidden="true" />
-        </div>
       </div>
+     
+    </div>
+    <div className="mt-2">
+      <label htmlFor="email" className="block text-md font-medium leading-6 text-gray-900">
+      Choose the number of tokens:
+      </label>
+      <div>
+        <input
+          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dc0bb4] sm:text-sm sm:leading-6"
+          placeholder=""
+          aria-describedby="email-description"
+        />
+      </div>
+     
+    </div>
+    <div className="mt-2">
+      <label htmlFor="email" className="block text-md font-medium leading-6 text-gray-900">
+     Current price per token (€):
+      </label>
+      <div>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dc0bb4] sm:text-sm sm:leading-6"
+          placeholder=""
+          aria-describedby="email-description"
+        />
+      </div>
+     
+    </div>
+    <div className="mt-2">
+      <label htmlFor="email" className="block text-md font-medium leading-6 text-gray-900">
+      Total amount to pay (€):
+      </label>
+      <div className="">
+        <input
+          type="email"
+          name="email"
+          id="email"
+          className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dc0bb4] sm:text-sm sm:leading-6"
+          placeholder=""
+          aria-describedby="email-description"
+        />
+      </div>
+     
+    </div>
+   
+        <div className="relative flex items-start mt-10">
+          <div className="flex h-6 items-center">
+            <input
+              type="checkbox"
+              className="h-4 w-4 rounded border-gray-300 text-[#dc0bb4] focus:ring-[#dc0bb4]"
+            />
+          </div>
+          <div className="ml-2 text-sm leading-6">
+            <label htmlFor="comments" className="font-medium text-gray-900">
+              Accept general terms and conditions.
+            </label>{' '}
+            <span id="comments-description" className="text-gray-500">
+              <span className="sr-only">New comments </span>
+            </span>
+          </div>
+        </div>
+           
+          
+          <div className="h-[.02rem] bg-gray-300 my-5">
+          </div>
 
-      <button
-        type="button"
-        className="mt-3 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-      >
-        Continue with Email
-      </button>
-      <Dropdown/>
-      <div className="grid grid-rows-2">
-      <div className="flex-col">
-        <h1 className="font-bold text-md">Notice:</h1>
-        <p className="text-sm text-gray-900 my-2">Web3Auth does not store any data related to your social logins.</p>
-        </div>
-        <div className="grid grid-cols-2 leading-5 mb-5 text-indigo-950">
-        <div> 
-        <p>Terms of Use | Data protection-</p>
-        <p>Regulations</p>
-        <p className=" italic">Version 4.1.2</p>
-        </div>
-        <div className="text-end flex-col">  
-        <p>Self-custody-</p>
-        <p>Login through</p>
-        <p className="font-bold">W web3auth</p>
-        </div>
+          <div className="lg:flex-col pb-5 gap-x-2 text-end ">
+            <button
+                type="button"
+                className="text-[1rem] shadow-lg rounded-md  bg-[#dc0bb4] py-2 px-3 font-normal text-white hover:bg-indigo-900">
+                Cancel
+              </button>
+              <button
+                type="button"
+                className="text-[1rem] shadow-lg rounded-md ml-2 bg-[#dc0bb4]  py-2 px-3 font-normal text-white hover:bg-indigo-900">
+                Reset
+              </button>
+              <button
+                type="button"
+                className="text-[1rem] shadow-lg rounded-md ml-2 bg-[#dc0bb4] w-auto py-2 px-3 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
+                Binding order
+              </button>
           </div>
-      </div>
           </div>
+
       </ModalContainer>
   )
 }
