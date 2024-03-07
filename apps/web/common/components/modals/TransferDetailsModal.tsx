@@ -63,7 +63,7 @@ const TransferDetailsModal = ({
               <button
               onClick={hideModal}
                 type="button"
-                className="text-[1rem] shadow-lg rounded-md ml-2 bg-[#dc0bb4] w-auto py-2 px-3 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
+                className="text-[1rem] shadow-lg rounded-md ml-2 bg-primary-500 w-auto py-2 px-3 font-normal text-white hover:bg-primary-700 overflow-hidden group">
                 Close
               </button>
           </div>

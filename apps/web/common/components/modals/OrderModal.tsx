@@ -86,7 +86,7 @@ const OrderModal = ({
           <div className="flex h-6 items-center">
             <input
               type="checkbox"
-              className="h-4 w-4 rounded border-gray-300 text-[#dc0bb4] focus:ring-[#dc0bb4]"
+              className="h-4 w-4 rounded border-gray-300 text-primary-500 focus:ring-[#dc0bb4]"
             />
           </div>
           <div className="ml-2 text-sm leading-6">
@@ -106,17 +106,17 @@ const OrderModal = ({
           <div className="lg:flex-col pb-5 gap-x-2 text-end ">
             <button
                 type="button"
-                className="text-[1rem] shadow-lg rounded-md  bg-[#dc0bb4] py-2 px-3 font-normal text-white hover:bg-indigo-900">
+                className="text-[1rem] shadow-lg rounded-md  bg-primary-500 py-2 px-3 font-normal text-white hover:bg-primary-700">
                 Cancel
               </button>
               <button
                 type="button"
-                className="text-[1rem] shadow-lg rounded-md ml-2 bg-[#dc0bb4]  py-2 px-3 font-normal text-white hover:bg-indigo-900">
+                className="text-[1rem] shadow-lg rounded-md ml-2 bg-primary-500  py-2 px-3 font-normal text-white hover:bg-primary-700">
                 Reset
               </button>
               <button
                 type="button"
-                className="text-[1rem] shadow-lg rounded-md ml-2 bg-[#dc0bb4] w-auto py-2 px-3 font-normal text-white hover:bg-indigo-900 overflow-hidden group">
+                className="text-[1rem] shadow-lg rounded-md ml-2 bg-primary-500 w-auto py-2 px-3 font-normal text-white hover:bg-primary-700 overflow-hidden group">
                 Binding order
               </button>
           </div>

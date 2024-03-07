@@ -28,7 +28,7 @@ const RegisterWalletModal = ({
            <div className="grid grid-rows-2 mx-10">
            <button
         type="button"
-        className="mt-10 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="mt-10 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         <FaGoogle className="-ml-5 h-8 w-8 mr-2" aria-hidden="true" />
         Continue with Google
@@ -36,20 +36,20 @@ const RegisterWalletModal = ({
           <div className="pt-3 grid grid-cols-3 gap-x-3 py-6">
           <button
         type="button"
-        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         <FaFacebook className="h-10 w-10" aria-hidden="true" />
       </button>
 
       <button
         type="button"
-        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         <FaTwitter className="h-10 w-10" aria-hidden="true" />
       </button>
       <button
         type="button"
-        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5  justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5  justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         <IoLogoDiscord  className="h-10 w-10" aria-hidden="true" />
       </button>
@@ -76,7 +76,7 @@ const RegisterWalletModal = ({
 
       <button
         type="button"
-        className="mt-3 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-[#dc0bb4] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="mt-3 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
       >
         Continue with Email
       </button>

@@ -1,16 +1,15 @@
 "use client"
 
-import { useState, useEffect, Fragment } from 'react'
+import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link';
-import { Popover, Transition } from '@headlessui/react';
 
 const navigation = [
-  { name: 'HOME', href: '/Home' },
-  { name: 'AGI', href: '/About' },
-  { name: 'MY ACCOUNT', href: '/MyAccount' },
+  { name: 'HOME', href: '/home' },
+  { name: 'AGI', href: '/about' },
+  { name: 'MY ACCOUNT', href: '/my-account' },
   
 ]
 
@@ -44,24 +43,9 @@ export default function Header() {
   return (
     <header className={`z-10  bg-white sticky h-auto top-0 ${scrolling ? '' : ''}`}>
       <nav className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between" aria-label="Global">
-        <a href="#" className={`flex ml-16 items-center justify-center`}>
-          
-        <Image
-          src="/agiPlaceholderImage.png"
-          alt="Company"
-          width={65}
-          height={65}
-          className="mx-auto h-auto w-auto rounded-lg"
-          style={{
-            width: scrolling ? '' : '',
-            height: scrolling ? '' : '',
-            transition: 'width 0.4s ease, height 0.4s ease',
-          }}
-        />
-        
-       
-          
-        </a>
+        <Link href="/" className={`flex ml-16 items-center justify-center text-[3.5rem]`}>
+          AGI
+        </Link>
         <div className="flex lg:hidden">
           <button
             type="button"
@@ -100,13 +84,13 @@ export default function Header() {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               stroke="currentColor"
               className="h-5 w-5 ml-2 mb-1"
             >
               <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
                 d="M19.5 8.25l-7.5 7.5-7.5-7.5"
               />
             </svg>
