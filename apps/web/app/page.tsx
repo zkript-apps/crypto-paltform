@@ -1,4 +1,4 @@
-import LandingPage from "@/module/LandingPage"
+import Home from "@/module/Home"
 import { APP_NAME } from "@repo/constants"
 import { Metadata } from "next"
 
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const HomePage = () => {
   return (
-    <LandingPage />
+    <Home />
   )
 }
 
