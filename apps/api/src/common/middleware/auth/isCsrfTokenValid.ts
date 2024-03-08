@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from 'express'
-import validateCsrfToken from '@/common/helpers/validateCsrfToken'
-import { ResponseService } from '@/common/service/response'
-import { USER_NOT_AUTHORIZED } from '@/common/constants'
+import { NextFunction, Request, Response } from "express"
+import validateCsrfToken from "@/common/helpers/validateCsrfToken"
+import { ResponseService } from "@/common/service/response"
+import { USER_NOT_AUTHORIZED } from "@/common/constants"
 
 const response = new ResponseService()
 
@@ -10,10 +10,10 @@ const isCsrfTokenValid = async (
   res: Response,
   next: NextFunction
 ) => {
-  const csrfToken = req.cookies['next-auth.csrf-token']
+  const csrfToken = req.cookies["next-auth.csrf-token"]
   if (csrfToken) {
     const isTokenValid = validateCsrfToken(csrfToken)
-    if (isTokenValid === 'valid') {
+    if (isTokenValid === "valid") {
       next()
     } else {
       res.json(

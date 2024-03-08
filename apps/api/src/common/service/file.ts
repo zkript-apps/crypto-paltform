@@ -5,8 +5,8 @@ import {
   PutObjectCommandInput,
   GetObjectCommandInput,
   GetObjectCommand,
-} from '@aws-sdk/client-s3'
-import { randomUUID } from 'crypto'
+} from "@aws-sdk/client-s3"
+import { randomUUID } from "crypto"
 
 export type T_UploadFileParams = {
   multiple?: boolean
@@ -27,10 +27,10 @@ export class FileService {
   private BUCKET_NAME: string
 
   constructor() {
-    this.AWS_REGION = process.env.AWS_REGION || ''
-    this.AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY || ''
-    this.AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || ''
-    this.BUCKET_NAME = 'exploresiargao-dev'
+    this.AWS_REGION = process.env.AWS_REGION || ""
+    this.AWS_ACCESS_KEY = process.env.AWS_ACCESS_KEY || ""
+    this.AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY || ""
+    this.BUCKET_NAME = "exploresiargao-dev"
 
     this.config = {
       region: this.AWS_REGION,
@@ -48,7 +48,7 @@ export class FileService {
     const randomId = randomUUID()
     const fileContent = Buffer.from(
       multiple ? files?.files?.data : files?.file?.data,
-      'binary'
+      "binary"
     )
     const params: PutObjectCommandInput = {
       Bucket: this.BUCKET_NAME,
@@ -71,7 +71,7 @@ export class FileService {
     }
     const command = new GetObjectCommand(params)
     const getObjectResult = await this.s3ProviderClient.send(command)
-    const fileBase64 = await getObjectResult.Body?.transformToString('base64')
-    return Buffer.from(fileBase64 as string, 'base64')
+    const fileBase64 = await getObjectResult.Body?.transformToString("base64")
+    return Buffer.from(fileBase64 as string, "base64")
   }
 }

@@ -1,11 +1,11 @@
-import express from 'express'
-import cors from 'cors'
-import cookies from 'cookie-parser'
-import { port, origins } from '@/common/config'
-import routes from '@/routes'
+import express from "express"
+import cors from "cors"
+import cookies from "cookie-parser"
+import { port, origins } from "@/common/config"
+import routes from "@/routes"
 
 const cp = express()
-cp.disable('x-powered-by')
+cp.disable("x-powered-by")
 cp.use(cookies())
 cp.use(express.json())
 cp.use(

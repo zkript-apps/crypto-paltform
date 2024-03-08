@@ -1,4 +1,4 @@
-import CryptoJS from 'crypto-js'
+import CryptoJS from "crypto-js"
 
 const randomNumber = () => {
   const randomBytes = CryptoJS.lib.WordArray.random(8)

@@ -1,13 +1,13 @@
-const POUND = 'Pound'
-const EUR = 'EUR'
+const POUND = "Pound"
+const EUR = "EUR"
 export const currencyByCountry = {
-  US: 'USD',
-  PH: 'PHP',
-  AU: 'AUD',
-  JP: 'JPY',
-  CN: 'CNY',
-  KP: 'KRW',
-  KR: 'KRW',
+  US: "USD",
+  PH: "PHP",
+  AU: "AUD",
+  JP: "JPY",
+  CN: "CNY",
+  KP: "KRW",
+  KR: "KRW",
   EG: POUND,
   FK: POUND,
   GI: POUND,
@@ -43,5 +43,5 @@ export const currencyByCountry = {
   SK: EUR,
   SI: EUR,
   ES: EUR,
-  IL: 'Shekels',
+  IL: "Shekels",
 }
