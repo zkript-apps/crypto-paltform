@@ -7,11 +7,6 @@ export default function About() {
 
   return (
     <>
-      <style jsx global>{`
-        body {
-          overflow-x: hidden;
-        }
-      `}</style>
       <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
         <div className="grid mb-auto bg-black w-full lg:h-[50rem] h-auto justify-center items-center">
           <div className="grid  -gap-x-20 sm:pb-10 lg:grid-cols-2 sm:grid-cols-1 bg-black w-full lg:h-[40rem] h-auto justify-center">

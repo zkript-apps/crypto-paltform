@@ -6,11 +6,6 @@ export default function Home() {
 
   return (
     <>
-      <style jsx global>{`
-        body {
-          overflow-x: hidden;
-        }
-      `}</style>
       <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
         <div className="grid mb-auto bg-black w-full h-auto justify-center items-center">
           <div className="grid ml-10 -gap-x-20 lg:grid-cols-2 grid-cols-1 bg-black w-full h-auto justify-center">
