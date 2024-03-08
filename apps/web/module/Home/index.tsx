@@ -41,7 +41,7 @@ export default function Home() {
 
         </div>
         <div className='grid mb-auto w-full h-auto justify-center items-center'>
-        <div className="lg:flex grid w-auto lg:grid-cols-2 grid-cols-1 lg:m-0 h-auto justify-center mx-auto">
+        <div className="lg:flex grid w-auto lg:grid-cols-2 grid-cols-1 lg:ml-44 h-auto justify-center mx-auto">
             <div className="border-primary-500 border lg:h-auto lg:w-[39rem] lg:mb-[12rem] lg:-ml-[5.5rem] lg:-mt-[12rem] lg:mx-0 mx-[4rem] bg-white flex items-center"> {/* Updated this line */}
               <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-[25rem] lg:mx-10 mx-5 h-auto">
                 <h1 className="font-bold lg:text-[3rem] text-[1.5rem] h-auto">Lorem Ipsum</h1>
@@ -56,15 +56,16 @@ export default function Home() {
                   laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
                   voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
                   non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                  
               </div>
             </div>
-            <div className="lg:-ml-[6.8rem] lg:-mt-2.5 flex-auto">
+            <div className="items-end ml-5 pb-[12rem] flex">
               <Image
                 src="/homepage_image.png"
                 alt="Your Company"
-                width={2000}
-                height={2000}
-                className="mx-auto h-[40rem] w-auto" />
+                width={600}
+                height={600}
+                className="mx-auto h-auto w-auto" />
             </div>
           </div>
         </div>
