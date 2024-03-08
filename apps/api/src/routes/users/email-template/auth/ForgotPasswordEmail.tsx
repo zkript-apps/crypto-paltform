@@ -11,8 +11,8 @@ import {
   Preview,
   Section,
   Text,
-} from '@react-email/components'
-import * as React from 'react'
+} from "@react-email/components"
+import * as React from "react"
 import {
   buttonContainer,
   button,
@@ -23,7 +23,7 @@ import {
   main,
   paragraph,
   reportLink,
-} from '../styles'
+} from "../styles"
 
 interface ForgotPasswordEmailProps {
   magicLink: string

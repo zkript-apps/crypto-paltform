@@ -9,8 +9,8 @@ import {
   Link,
   Preview,
   Text,
-} from '@react-email/components'
-import * as React from 'react'
+} from "@react-email/components"
+import * as React from "react"
 import {
   code,
   container,
@@ -20,7 +20,7 @@ import {
   main,
   paragraph,
   reportLink,
-} from '../styles'
+} from "../styles"
 
 interface MultiFactorAuthProps {
   validationCode: string

@@ -82,7 +82,7 @@ const ModalContainer = ({
                       </h1>
                     </div>
                   </div>
-            
+
                   {children}
                 </div>
               </Dialog.Panel>

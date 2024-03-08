@@ -1,7 +1,7 @@
-import { NextFunction, Request, Response } from 'express'
-import { webUrl } from '@/common/config'
-import { ResponseService } from '@/common/service/response'
-import { USER_NOT_AUTHORIZED } from '@/common/constants'
+import { NextFunction, Request, Response } from "express"
+import { webUrl } from "@/common/config"
+import { ResponseService } from "@/common/service/response"
+import { USER_NOT_AUTHORIZED } from "@/common/constants"
 
 const response = new ResponseService()
 
@@ -10,9 +10,9 @@ const isOriginValid = async (
   res: Response,
   next: NextFunction
 ) => {
-  const origin = req.headers['origin']
-  const referer = req.headers['referer']
-  const proxy = req.headers['x-forwarded-host']
+  const origin = req.headers["origin"]
+  const referer = req.headers["referer"]
+  const proxy = req.headers["x-forwarded-host"]
   if ((origin && referer) || proxy) {
     const isValid =
       (String(referer).startsWith(webUrl) && origin === webUrl) ||

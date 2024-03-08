@@ -27,12 +27,11 @@ export default async function RootLayout({
         <Toaster />
         <QueryClientWrapper>
           <GlobalModalWrapper>
-            <Header/>
+            <Header />
             <div className="min-h-screen">{children}</div>
-          <Footer/>
+            <Footer />
           </GlobalModalWrapper>
         </QueryClientWrapper>
-        
       </body>
     </html>
   )

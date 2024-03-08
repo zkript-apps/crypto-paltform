@@ -1,27 +1,27 @@
-import { NextFunction, Request, Response } from 'express'
-import { UNKNOWN_ERROR_OCCURRED } from '../../constants'
-import { nextAuthSecret } from '@/common/config/'
-import { PrismaClient } from '@prisma/client'
-import { decode } from 'next-auth/jwt'
-import { ResponseService } from '@/common/service/response'
-import { E_RegistrationType, E_UserRole, T_Session } from '@repo/contract'
-import { USER_NOT_AUTHORIZED } from '@/common/constants'
+import { NextFunction, Request, Response } from "express"
+import { UNKNOWN_ERROR_OCCURRED } from "../../constants"
+import { nextAuthSecret } from "@/common/config/"
+import { PrismaClient } from "@prisma/client"
+import { decode } from "next-auth/jwt"
+import { ResponseService } from "@/common/service/response"
+import { E_RegistrationType, E_UserRole, T_Session } from "@repo/contract"
+import { USER_NOT_AUTHORIZED } from "@/common/constants"
 
 const response = new ResponseService()
 
 enum JWT_Error {
-  'jwt malformed' = 'jwt malformed',
-  'jwt expired' = 'jwt expired',
+  "jwt malformed" = "jwt malformed",
+  "jwt expired" = "jwt expired",
 }
 
 const checkErrorMessage = (res: Response, message: string | JWT_Error) => {
   const error = {
-    'jwt malformed': 'Invalid authentication credentials',
-    'jwt expired': 'Authentication is expired, please login again',
+    "jwt malformed": "Invalid authentication credentials",
+    "jwt expired": "Authentication is expired, please login again",
   }
   res.json(
     response.error({
-      message: typeof message === 'string' ? message : error[message],
+      message: typeof message === "string" ? message : error[message],
     })
   )
 }
@@ -31,7 +31,7 @@ const isUserLoggedIn = async (
   res: Response,
   next: NextFunction
 ) => {
-  const token = req.cookies['next-auth.session-token']
+  const token = req.cookies["next-auth.session-token"]
   const decoded = await decode({
     token: token,
     secret: nextAuthSecret,
@@ -54,7 +54,7 @@ const isUserLoggedIn = async (
         },
       })
       if (user && (user.deletedAt || user.deactivated)) {
-        throw new Error('We cannot find your account in our system')
+        throw new Error("We cannot find your account in our system")
       }
       const authUser: T_Session = {
         id: user?.id as number,

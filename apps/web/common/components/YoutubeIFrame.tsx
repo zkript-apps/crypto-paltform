@@ -1,54 +1,54 @@
-import React, { useState, useEffect, useCallback, useRef } from "react";
+import React, { useState, useEffect, useCallback, useRef } from "react"
 
 interface IProps {
-  videoId: string;
-  autoPlay?: boolean;
-  title: string;
+  videoId: string
+  autoPlay?: boolean
+  title: string
 }
 
 const VideoIframe: React.FC<IProps> = ({ videoId, autoPlay, title }) => {
   const videoURL = `https://www.youtube.com/embed/${videoId}${
     autoPlay ? "?autoplay=1" : ""
-  }`;
-  const iframeRef = useRef<HTMLIFrameElement>(null);
-  const defaultHeight = 495;
+  }`
+  const iframeRef = useRef<HTMLIFrameElement>(null)
+  const defaultHeight = 495
   const [videoHeight, setVideoHeight] = useState<number>(
     iframeRef.current ? iframeRef.current.offsetWidth * 0.5625 : defaultHeight
-  );
+  )
 
   const handleChangeVideoWidth = useCallback(() => {
     const ratio =
       window.innerWidth > 990
         ? 1.0
         : window.innerWidth > 522
-        ? 1.2
-        : window.innerWidth > 400
-        ? 1.45
-        : 1.85;
+          ? 1.2
+          : window.innerWidth > 400
+            ? 1.45
+            : 1.85
     const height = iframeRef.current
       ? iframeRef.current.offsetWidth * 0.5625
-      : defaultHeight;
-    return setVideoHeight(Math.floor(height * ratio));
-  }, []);
+      : defaultHeight
+    return setVideoHeight(Math.floor(height * ratio))
+  }, [])
 
   useEffect(() => {
-    window.addEventListener("resize", handleChangeVideoWidth);
+    window.addEventListener("resize", handleChangeVideoWidth)
     const ratio =
       window.innerWidth > 990
         ? 1.0
         : window.innerWidth > 522
-        ? 1.2
-        : window.innerWidth > 400
-        ? 1.45
-        : 1.85;
+          ? 1.2
+          : window.innerWidth > 400
+            ? 1.45
+            : 1.85
     const height = iframeRef.current
       ? iframeRef.current.offsetWidth * 0.5625
-      : defaultHeight;
-    setVideoHeight(Math.floor(height * ratio));
+      : defaultHeight
+    setVideoHeight(Math.floor(height * ratio))
     return function cleanup() {
-      window.removeEventListener("resize", handleChangeVideoWidth);
-    };
-  }, [handleChangeVideoWidth]);
+      window.removeEventListener("resize", handleChangeVideoWidth)
+    }
+  }, [handleChangeVideoWidth])
 
   return (
     <iframe
@@ -61,7 +61,7 @@ const VideoIframe: React.FC<IProps> = ({ videoId, autoPlay, title }) => {
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
       allowFullScreen
     />
-  );
-};
+  )
+}
 
-export default VideoIframe;
+export default VideoIframe

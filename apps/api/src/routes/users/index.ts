@@ -1,8 +1,8 @@
-import express from 'express'
+import express from "express"
 
 const router = express.Router()
 
 // DEFAULT
-router.get('/', () => console.log('test'))
+router.get("/", () => console.log("test"))
 
-export default router;
+export default router
