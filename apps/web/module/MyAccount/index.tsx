@@ -32,7 +32,7 @@ export default function MyAccount() {
       `}</style>
       <div className="lg:mx-auto mb-auto items-center justify-between">
         
-        <div className='grid bg-slate-900 w-full lg:h-auto justify-center items-center text-center '>
+        <div className='grid bg-slate-900 lg:h-auto justify-center items-center text-center '>
         <div className="mx-10">
           <h1 className="py-28 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-semibold font-sans">AGI | My Account</h1>
 
@@ -53,7 +53,7 @@ export default function MyAccount() {
               </button>
           </div>
 
-          <div className="bg-white flex-col w-full lg:w-[100rem] h-auto py-10 rounded-2xl mt-5 border-primary-500 border justify-center items-center flex">
+          <div className="bg-white flex-col w-full h-auto py-10 rounded-2xl mt-5 border-primary-500 border justify-center items-center flex">
             <h1 className="underline text-[2rem] font-extrabold">Wallet Overview:</h1>
             <h1 className="text-md font-normal mt-10">Not logged into the wallet.</h1>
             <h1 className="text-md font-normal mt-8">Balance piece: 0 x price: 1.3340 € = value: 0.00 €</h1>
@@ -64,7 +64,7 @@ export default function MyAccount() {
             </div>
            
           </div>
-          <div className="bg-white flex-col w-full lg:w-[100rem] font-semibold h-auto py-10 rounded-2xl mt-5 border-primary-500 border flex text-justify">
+          <div className="bg-white flex-col w-full font-semibold h-auto py-10 rounded-2xl mt-5 border-primary-500 border flex text-justify">
             <div className="mx-10">
               <h1 className=" text-[2.3rem] font-extrabold">The future belongs to AI</h1>
               <p className="text-lg mt-5 leading-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus neque sed blandit viverra. Donec finibus 
@@ -89,7 +89,7 @@ export default function MyAccount() {
            
            
           </div>
-          <div className="bg-white flex-col w-full lg:w-[100rem] font-semibold h-auto py-10 rounded-2xl mt-5 border-primary-500 border text-justify flex">
+          <div className="bg-white flex-col w-full font-semibold h-auto py-10 rounded-2xl mt-5 border-primary-500 border text-justify flex">
             <div className="mx-10">
               <h1 className=" text-[2.3rem] font-extrabold">Right of Withdrawal</h1>
               <p className="text-lg mt-5 leading-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque dapibus neque sed blandit viverra. Donec finibus 

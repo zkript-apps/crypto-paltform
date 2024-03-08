@@ -81,7 +81,7 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="bg-black mt-12">
+        <div className="bg-black -mt-28">
           <div className="lg:mx-auto mx-20 max-w-7xl pt-16 sm:pt-24 lg:px-8 lg:pt-32 items-center justify-center">
             <div className="flex-col lg:ml-16 mt-16 pb-28">
               <h1 className=" text-primary-500 font-bold text-sm">TYPES AND FUNCTIONS</h1>

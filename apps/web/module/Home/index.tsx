@@ -69,7 +69,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="bg-black mt-12">
+        <div className="bg-black -mt-28">
           <div className="mx-auto max-w-7xl px-6 pt-16 sm:pt-24 lg:px-8 lg:pt-32 items-center justify-center">
             <div className="flex-col ml-20 mt-16 mx-auto">
               <h1 className=" text-primary-500 font-bold text-sm">SERVICES</h1>
