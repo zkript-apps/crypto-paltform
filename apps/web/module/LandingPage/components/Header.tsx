@@ -58,20 +58,9 @@ export default function Header() {
         className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between"
         aria-label="Global"
       >
-        <a href="#" className={`flex ml-16 items-center justify-center`}>
-          <Image
-            src="/agiPlaceholderImage.png"
-            alt="Company"
-            width={65}
-            height={65}
-            className="mx-auto h-auto w-auto rounded-lg"
-            style={{
-              width: scrolling ? "" : "",
-              height: scrolling ? "" : "",
-              transition: "width 0.4s ease, height 0.4s ease",
-            }}
-          />
-        </a>
+        <Link href="/" className={`flex ml-16 items-center justify-center text-[3rem]`}>
+          AGI
+        </Link>
         <div className="flex lg:hidden py-6">
           <button
             type="button"
@@ -142,10 +131,10 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <Link href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Company</span>=
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Company</span>
               <h1>AGI</h1>
-            </Link>
+            </a>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
