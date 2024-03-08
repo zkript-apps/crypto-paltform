@@ -56,7 +56,7 @@ const RegisterWalletModal = ({
           </div>
            </div>
           <div className="mx-10 h-[.02rem] bg-gray-300 my-1">
-           
+            
           </div>
           <p className="bg-white text-center px-1 mx-[45%]  text-gray-500 -mt-5 text-lg font-semibold">or</p>
 

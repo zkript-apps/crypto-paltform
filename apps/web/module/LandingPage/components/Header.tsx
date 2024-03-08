@@ -6,12 +6,21 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link';
 import { Popover, Transition } from '@headlessui/react';
+import { ChevronDown } from 'lucide-react';
 
 const navigation = [
   { name: 'HOME', href: '/home' },
   { name: 'AGI', href: '/about' },
   { name: 'MY ACCOUNT', href: '/my-account' },
-  
+  { name: 'LEGAL', href: '' },
+]
+
+const navigationLegal = [
+  { name: 'IMPRINT', href: '' },
+  { name: 'DATA PROTECTION', href: '' },
+  { name: 'OUT OF COURT DISPUTE RESOLUTION', href: '' },
+  { name: 'DISCLAIMER', href: '' },
+  { name: 'RIGHT OF WITHDRAWAL', href: '' },
 ]
 
 export default function Header() {
@@ -70,84 +79,46 @@ export default function Header() {
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon 
-           
-            color='primary-500'
-            className="h-7 w-7 mr-16" aria-hidden="true" />
+            className="h-7 w-7 mr-16 text-primary-500" aria-hidden="true" />
           </button>
         </div>
         <div className={'hidden lg:flex lg:gap-x-12 justify-center items-center'}>
           {navigation.map((item) => (
            <Link key={item.name} href={item.href}>
+            <div className={`${item.name === 'LEGAL' ? 'group' : '' } py-5`}>
            <button
              onClick={() => handleNavigationClick(item) } 
              className={`${
-               activeNavItem === item ? ' text-primary-500 ' : ' text-gray-500'
-             } text-md font-bold leading-6 `}
+               activeNavItem === item ? ' text-primary-500' : ' text-gray-500'
+             } text-md font-bold leading-6 flex`}
+           >         
+             {item.name}          
+             {item.name === 'LEGAL' &&  <ChevronDown />}
+           </button>
+           <div
+          className="invisible absolute z-50 flex w-52 justify-center flex-col my-5 bg-white text-gray-800 shadow-xl group-hover:visible"
+        >
+          <div className='h-1 bg-primary-500'></div>
+          <div className={'grid grid-rows my-2 mx-3'}>
+          {navigationLegal.map((item) => (
+           <Link key={item.name} href={item.href}>
+           <button
+             onClick={() => handleNavigationClick(item) } 
+             className={`${
+               activeNavItem === item ? ' text-primary-500' : 'hover:bg-gray-100 text-gray-500'
+             } text-sm font-bold leading-6 py-1 w-full text-start`}
            >
              {item.name}
            </button>
          </Link>
           ))}   
-    <div>
-      <div className="group relative cursor-pointer">
-        <div className="flex items-center justify-between bg-white px-4 py-6">
-          <a
-            className="menu-hover text-md font-bold text-gray-500">
-            LEGAL
-          </a>
-          <span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              className="h-5 w-5 ml-2 mb-1"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
-              />
-            </svg>
-          </span>
+          </div>
         </div>
-        
-        <div
-          className="invisible absolute z-50 flex w-[15rem] justify-center flex-col bg-white text-gray-800 shadow-xl  group-hover:visible"
-        >
-          <div className='h-1 bg-primary-500'></div>
-          <a
-            className="mt-1 block py-2 font-semibold text-gray-500 hover:bg-gray-100 mx-3"
-            ><div className='mx-5'>IMPRINT</div>
-            </a>
- 
-          <a
-            className=" block  py-2 font-semibold text-gray-500 hover:bg-gray-100 mx-3"
-            ><div className='mx-5'>DATA PROTECTION</div></a>
-          <a
-            className="block  py-2 font-semibold text-gray-500 hover:bg-gray-100 mx-3">
-              <div className='mx-5'>DISCLAIMER</div>
-          </a>
-          <a
-            className=" block  py-2 font-semibold text-gray-500 hover:bg-gray-100 mx-3"
-            ><div className='mx-5'>
-            OUT OF COURT DISPUTE RESOLUTION</div>
-          </a>
-          <a
-            className=" block  py-2 font-semibold text-gray-500 hover:bg-gray-100 mx-3"
-            ><div className='mx-5'>
-            DISCLAIMER</div>
-          </a>
-          <a
-            className=" block my-2 py-2 font-semibold text-gray-500 hover:bg-gray-100 mx-3"
-            ><div className='mx-5'>
-            RIGHT OF WITHDRAWAL</div>
-          </a>
         </div>
-      </div>
-    </div>
-
+         </Link>
+          ))}   
+          
+  
           <Link href="#" className="mr-24 text-md font-bold leading-6 text-gray-500">
             LOG IN
           </Link>
@@ -161,13 +132,7 @@ export default function Header() {
           <div className="flex items-center justify-between">
             <a href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Company</span>
-              {/* <Image
-              src="/logo.png"
-              alt="Your Company"
-              width={100}
-              height={100}
-              className="mx-auto h-10 w-auto rounded-lg"
-            /> */}
+              
             <h1>AGI</h1>
             </a>
             <button
@@ -186,7 +151,18 @@ export default function Header() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+              <div className="space-y-2 py-6">
+                {navigationLegal.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
                   </a>
