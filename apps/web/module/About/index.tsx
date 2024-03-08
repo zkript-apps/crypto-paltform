@@ -16,13 +16,13 @@ export default function About() {
 
         <div className='grid mb-auto bg-black w-full lg:h-[50rem] h-auto justify-center items-center'>
 
-          <div className='grid  -gap-x-20 lg:grid-cols-2 sm:grid-cols-1 bg-black w-full lg:h-[40rem] h-auto justify-center'>
+          <div className='grid  -gap-x-20 sm:pb-10 lg:grid-cols-2 sm:grid-cols-1 bg-black w-full lg:h-[40rem] h-auto justify-center'>
             <div className="flex-col">
               <h1 className="lg:size-[33rem] lg:ml-32 text-white lg:text-[6rem] md:text-[35px] md:ml-5 sm:text-[25px] font-bold font-sans leading-[7rem] sm:ml-10">The #42
                 and the bot</h1>
               <p className="lg:size-[33rem] lg:ml-[8rem] text-white lg:text-[2rem] md:text-[35px] md:ml-5 sm:text-[25px] font-bold font-sans sm:ml-10 lg:-mt-[19rem]">Because #21 is only half the story!</p>
             </div>
-            <div className="mx-10 ml-40 text-white text-[5rem]">
+            <div className="mx-10 ml-40 text-white text-[5rem] ">
               <Image
                 src="/about_image.jpg"
                 alt="Your Company"
@@ -31,7 +31,7 @@ export default function About() {
                 className="mx-auto h-auto w-auto" />
               <button
                 type="button"
-                className="relative rounded-md bg-primary-500 px-6 py-5 text-sm font-bold text-white shadow-sm hover:bg-primary-700 overflow-hidden group"
+                className="relative rounded-md bg-primary-500 px-6 py-5 text-sm  font-bold text-white shadow-sm hover:bg-primary-700 overflow-hidden group"
               >
                 <div className="flex items-center justify-between">
                   <div>
@@ -69,7 +69,7 @@ export default function About() {
                   non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
               </div>
             </div>
-            <div className="items-end ml-5 pb-[16rem] flex">
+            <div className="items-end lg:ml-5 pb-[16rem]  sm:mx-10 sm:mt-5 flex">
          
               <Image
                 src="/homepage_image.png"

@@ -71,7 +71,7 @@ export default function Header() {
             <span className="sr-only">Open main menu</span>
             <Bars3Icon 
            
-            color='#dc0bb4'
+            color='primary-500'
             className="h-7 w-7 mr-16" aria-hidden="true" />
           </button>
         </div>
@@ -81,7 +81,7 @@ export default function Header() {
            <button
              onClick={() => handleNavigationClick(item) } 
              className={`${
-               activeNavItem === item ? ' text-[#df33e7] ' : ' text-gray-500'
+               activeNavItem === item ? ' text-primary-500 ' : ' text-gray-500'
              } text-md font-bold leading-6 `}
            >
              {item.name}
@@ -116,7 +116,7 @@ export default function Header() {
         <div
           className="invisible absolute z-50 flex w-[15rem] justify-center flex-col bg-white text-gray-800 shadow-xl  group-hover:visible"
         >
-          <div className='h-1 bg-[#df33e7]'></div>
+          <div className='h-1 bg-primary-500'></div>
           <a
             className="mt-1 block py-2 font-semibold text-gray-500 hover:bg-gray-100 mx-3"
             ><div className='mx-5'>IMPRINT</div>

@@ -23,12 +23,12 @@ const RegisterWalletModal = ({
         isOpen={showModal}
       >
            <div className="mx-10 mt-5">
-           <h1 className="text-gray-900 text-[1.5rem] font-semibold">Your blockchain wallet in one click</h1>
+           <h1 className="text-gray-900 text-xl font-semibold">Your blockchain wallet in one click</h1>
            </div>
            <div className="grid grid-rows-2 mx-10">
            <button
         type="button"
-        className="mt-10 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="mt-10 inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 py-5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 "
       >
         <FaGoogle className="-ml-5 h-8 w-8 mr-2" aria-hidden="true" />
         Continue with Google
@@ -36,7 +36,7 @@ const RegisterWalletModal = ({
           <div className="pt-3 grid grid-cols-3 gap-x-3 py-6">
           <button
         type="button"
-        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="inline-flex items-center gap-x-2 rounded-md border border-gray-300 px-3.5 justify-center  text-lg font-semibold text-gray-500  hover:text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
       >
         <FaFacebook className="h-10 w-10" aria-hidden="true" />
       </button>
@@ -66,7 +66,7 @@ const RegisterWalletModal = ({
            type="email"
            name="email"
            id="email"
-           className="block lg:text-lg w-full px-5 rounded-md border-0 py-6 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#dc0bb4] sm:text-sm sm:leading-6"
+           className="block lg:text-lg w-full px-5 rounded-md border-0 py-6 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-500 sm:text-sm sm:leading-6"
            placeholder="you@example.com"
         />
         <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">

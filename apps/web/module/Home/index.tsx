@@ -3,10 +3,7 @@ import YoutubeIFrame from "@/common/components/YoutubeIFrame";
 import Image from "next/image";
 export default function Home() {
 
-  
   const videoId = "wDchsz8nmbo";
-
-  
 
   return (
     <><style jsx global>{`
@@ -59,7 +56,7 @@ export default function Home() {
                   
               </div>
             </div>
-            <div className="items-end ml-5 pb-[12rem] flex">
+            <div className="items-end lg:ml-5 pb-[12rem] sm:mx-10 sm:mt-5 flex">
               <Image
                 src="/homepage_image.png"
                 alt="Your Company"
