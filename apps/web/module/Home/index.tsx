@@ -13,27 +13,21 @@ export default function Home() {
       `}</style>
       <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
 
-        <div className='grid mb-auto bg-black w-full lg:h-[40rem] h-auto justify-center items-center'>
+        <div className='grid mb-auto bg-black w-full h-auto justify-center items-center'>
 
-          <div className='grid ml-10 -gap-x-20 lg:grid-cols-2 grid-cols-1 bg-black w-full lg:h-[40rem] h-auto justify-center'>
+          <div className='grid ml-10 -gap-x-20 lg:grid-cols-2 grid-cols-1 bg-black w-full h-auto justify-center'>
             <h1 className="lg:w-[30rem] lg:ml-36 mt-20 text-white lg:text-[6rem] md:text-[35px] sm:text-[25px] font-bold font-sans leading-[8rem] sm:ml-10">The future with #42</h1>
             <div className="lg:m-20 lg:w-[35rem] lg:pb-10 pb-16 md:w-[50rem] md:h-auto sm:w-[25rem] mr-5 text-white text-[5rem]">
               <YoutubeIFrame videoId={videoId} title={""} />
-
+              <div className="flex lg:items-start lg:justify-start py-5 items-center justify-center">
               <button
-  type="button"
-  className="relative rounded-md bg-primary-500 px-6 py-5 text-sm font-bold text-white shadow-sm hover:bg-primary-700 overflow-hidden group"
->
-  <div className="flex items-center justify-between">
-    <div>
-      YOU CAN BUY TOKENS HERE
-    </div>
-    {/* <div className="opacity-0 ml-2 text-[]transition-opacity duration-300 group-hover:opacity-100">
-      &gt;
-    </div> */}
-  </div>
-</button>
+                type="button"
+                className="relative rounded-md bg-primary-500 px-6 py-5 text-sm font-bold text-white shadow-sm hover:bg-primary-700 overflow-hidden group">
+                YOU CAN BUY TOKENS HERE
+              </button>
+              </div>
             </div>
+            
           </div>
 
         </div>

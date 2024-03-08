@@ -89,7 +89,7 @@ export default function Header() {
            <button
              onClick={() => handleNavigationClick(item) } 
              className={`${
-               activeNavItem === item ? ' text-primary-500' : ' text-gray-500'
+               activeNavItem === item ? ' text-primary-300' : ' text-gray-500'
              } text-md font-bold leading-6 flex`}
            >         
              {item.name}          
@@ -105,7 +105,7 @@ export default function Header() {
            <button
              onClick={() => handleNavigationClick(item) } 
              className={`${
-               activeNavItem === item ? ' text-primary-500' : 'hover:bg-gray-100 text-gray-500'
+               activeNavItem === item ? ' text-primary-300' : 'hover:bg-gray-100 text-gray-500'
              } text-sm font-bold leading-6 py-1 w-full text-start`}
            >
              {item.name}

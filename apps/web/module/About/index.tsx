@@ -22,7 +22,7 @@ export default function About() {
                 and the bot</h1>
               <p className="lg:size-[33rem] lg:ml-[8rem] text-white lg:text-[2rem] md:text-[35px] md:ml-5 sm:text-[25px] font-bold font-sans sm:ml-10 lg:-mt-[19rem]">Because #21 is only half the story!</p>
             </div>
-            <div className="mx-10 ml-40 text-white text-[5rem] ">
+            <div className="mx-10 ml-40 text-white text-[5rem]">
               <Image
                 src="/about_image.jpg"
                 alt="Your Company"
@@ -37,9 +37,7 @@ export default function About() {
                   <div>
                     YOU CAN BUY TOKENS HERE
                   </div>
-                  {/* <div className="opacity-0 ml-2 text-[]transition-opacity duration-300 group-hover:opacity-100">
-      &gt;
-    </div> */}
+                 
                 </div>
               </button>
             </div>
