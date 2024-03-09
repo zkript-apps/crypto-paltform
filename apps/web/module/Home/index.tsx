@@ -1,6 +1,7 @@
 "use client"
 import YoutubeIFrame from "@/common/components/YoutubeIFrame"
 import Image from "next/image"
+import Link from "next/link"
 export default function Home() {
   const videoId = "wDchsz8nmbo"
 
@@ -91,9 +92,9 @@ export default function Home() {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
-                  <a className="text-primary-500 text-sm font-bold">
+                  <Link href="#" className="text-primary-500 text-sm font-bold">
                     read more
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-white w-auto h-auto rounded-lg">
@@ -105,9 +106,9 @@ export default function Home() {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
-                  <a className="text-primary-500 text-sm font-bold">
+                  <Link href="#" className="text-primary-500 text-sm font-bold">
                     read more
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-white w-auto h-auto rounded-lg">
@@ -119,9 +120,9 @@ export default function Home() {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
-                  <a className="text-primary-500 text-sm font-bold">
+                  <Link href="#" className="text-primary-500 text-sm font-bold">
                     read more
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-white w-auto h-auto rounded-lg">
@@ -133,9 +134,9 @@ export default function Home() {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
-                  <a className="text-primary-500 text-sm font-bold">
+                  <Link href="#" className="text-primary-500 text-sm font-bold">
                     read more
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-white w-auto h-auto rounded-lg">
@@ -147,9 +148,9 @@ export default function Home() {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
-                  <a className="text-primary-500 text-sm font-bold">
+                  <Link href="#" className="text-primary-500 text-sm font-bold">
                     read more
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="bg-white w-auto h-auto rounded-lg">
@@ -161,9 +162,9 @@ export default function Home() {
                     minim veniam, quis nostrud exercitation ullamco laboris nisi
                     ut aliquip ex ea commodo consequat.
                   </p>
-                  <a className="text-primary-500 text-sm font-bold">
+                  <Link href="#" className="text-primary-500 text-sm font-bold">
                     read more
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

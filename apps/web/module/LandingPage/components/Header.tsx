@@ -12,7 +12,7 @@ const navigation = [
   { name: "HOME", href: "/home" },
   { name: "AGI", href: "/about" },
   { name: "MY ACCOUNT", href: "/my-account" },
-  { name: "LEGAL", href: "" },
+  { name: "LEGAL", href: "#" },
 ]
 
 const navigationLegal = [
@@ -78,8 +78,8 @@ export default function Header() {
           className={"hidden lg:flex lg:gap-x-12 justify-center items-center"}
         >
           {navigation.map((item) => (
-            <Link key={item.name} href={item.href}>
-              <div className={`${item.name === "LEGAL" ? "group" : ""} py-5`}>
+              <div key={item.name} className={`${item.name === "LEGAL" ? "group" : ""} py-5`}>
+                            <Link href={item.href}>
                 <button
                   onClick={() => handleNavigationClick(item)}
                   className={`${
@@ -91,6 +91,7 @@ export default function Header() {
                   {item.name}
                   {item.name === "LEGAL" && <ChevronDown />}
                 </button>
+                </Link>
                 <div className="invisible absolute z-50 flex w-52 justify-center flex-col my-5 bg-white text-gray-800 shadow-xl group-hover:visible">
                   <div className="h-1 bg-primary-500"></div>
                   <div className={"grid grid-rows my-2 mx-3"}>
@@ -111,7 +112,6 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-            </Link>
           ))}
 
           <Link
@@ -131,10 +131,10 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="#" className="-m-1.5 p-1.5">
               <span className="sr-only">Company</span>
               <h1>AGI</h1>
-            </a>
+            </Link>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
@@ -148,33 +148,33 @@ export default function Header() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 {navigation.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="space-y-2 py-6">
                 {navigationLegal.map((item) => (
-                  <a
+                  <Link
                     key={item.name}
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2 font-semibold text-gray-900 hover:bg-gray-50"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="py-6">
-                <a
+                <Link
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
-                </a>
+                </Link>
               </div>
             </div>
           </div>
