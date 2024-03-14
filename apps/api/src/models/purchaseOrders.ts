@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
-const { Schema } = mongoose;
+import mongoose from "mongoose"
+const { Schema } = mongoose
 
 const purchaseOrders = new Schema({
-  userId: { 
-    type : mongoose.Types.ObjectId, 
-    ref: 'Organisations' 
+  userId: {
+    type: mongoose.Types.ObjectId,
+    ref: "Organisations",
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   amountMoney: {
     type: Number,
@@ -36,6 +36,6 @@ const purchaseOrders = new Schema({
   },
   updatedAt: Date,
   deletedAt: Date,
-});
+})
 
-export default mongoose.model("PurchaseOrders", purchaseOrders);
+export default mongoose.model("PurchaseOrders", purchaseOrders)

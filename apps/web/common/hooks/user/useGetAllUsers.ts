@@ -1,18 +1,18 @@
-import { API_USERS } from "@/common/constants/api-routes";
-import { ApiService } from "@/common/service/api";
-import { useQuery } from "@tanstack/react-query";
+import { API_USERS } from "@/common/constants/api-routes"
+import { ApiService } from "@/common/service/api"
+import { useQuery } from "@tanstack/react-query"
 
 export const getAllUsers = async () => {
-  const apiService = new ApiService();
-  return await apiService.get(`${API_USERS}`);
+  const apiService = new ApiService()
+  return await apiService.get(`${API_USERS}`)
 }
 
 const useGetAllUsers = () => {
   const query = useQuery({
-    queryKey: ['all-users'],
+    queryKey: ["all-users"],
     queryFn: () => getAllUsers(),
-  });
-  return query;
+  })
+  return query
 }
 
-export default useGetAllUsers;
+export default useGetAllUsers

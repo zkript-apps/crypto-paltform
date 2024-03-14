@@ -58,7 +58,10 @@ export default function Header() {
         className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between"
         aria-label="Global"
       >
-        <Link href="/" className={`flex ml-16 items-center justify-center text-[3rem]`}>
+        <Link
+          href="/"
+          className={`flex ml-16 items-center justify-center text-[3rem]`}
+        >
           AGI
         </Link>
         <div className="flex lg:hidden py-6">
