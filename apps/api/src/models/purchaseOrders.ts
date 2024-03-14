@@ -30,6 +30,10 @@ const purchaseOrders = new Schema({
     type: String,
     required: true,
   },
+  status: {
+    type: String,
+    enum: ["Pending", "Accepted", "Rejected"]
+  },
   createdAt: {
     type: Date,
     default: Date.now,

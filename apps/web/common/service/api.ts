@@ -31,6 +31,7 @@ export class ApiService {
   ) {
     const reqParams = new URLSearchParams(params).toString()
     const otherOptions = this.constructOptions()
+    console.log(this.BASE_URL)
     const res = fetch(
       `${this.BASE_URL}${endpoint}${params ? `?${reqParams}` : ""}`,
       {

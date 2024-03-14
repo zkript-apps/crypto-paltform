@@ -14,6 +14,15 @@ const users = new Schema({
     type: String,
     required: false,
   },
+  walletId: {
+    type: String,
+    required: true,
+  },
+  userType: {
+    type: String,
+    enum: ["User", "Admin"],
+    required: true,
+  },
   blockedAt: Date,
   createdAt: {
     type: Date,

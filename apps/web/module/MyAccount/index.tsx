@@ -4,6 +4,8 @@ import OrderModal from "@/common/components/modals/OrderModal"
 import RegisterWalletModal from "@/common/components/modals/RegisterWalletModal"
 import TransferDetailsModal from "@/common/components/modals/TransferDetailsModal"
 import { useState } from "react"
+import Table from "./table"
+import Information from "./information"
 
 export default function MyAccount() {
   const [isWalletRegisterOpen, setIsWalletRegisterOpen] = useState(false)
@@ -25,6 +27,15 @@ export default function MyAccount() {
             <h1 className="py-28 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-semibold font-sans">
               AGI | My Account
             </h1>
+
+            <div className="h-[35rem] rounded-2xl border-primary-500 flex gap-6">
+              <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-primary-500 border w-9/12 flex">
+                <Table />
+              </div>
+              <div className="bg-white h-max py-8 rounded-2xl mt-5 border-primary-500 border w-3/12 flex">
+                <Information />
+              </div>
+            </div>
 
             <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-primary-500 border justify-center items-center flex">
               <button

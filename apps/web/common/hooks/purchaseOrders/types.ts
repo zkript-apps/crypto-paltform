@@ -6,4 +6,5 @@ export type T_Purchase_Orders = {
   estimatedTokenAmount: number
   wireReferenceId?: string
   walletId: string
+  status: "Pending" | "Accepted" | "Rejected"
 }

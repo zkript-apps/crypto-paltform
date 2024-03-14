@@ -67,7 +67,7 @@ export const getUser = async (req: Request, res: Response) => {
 }
 
 export const addUser = async (req: Request, res: Response) => {
-  const { firstName, lastName, email } = req.body
+  const { firstName, lastName, email, userType } = req.body
 
   if (firstName && lastName && email) {
     try {
@@ -77,7 +77,10 @@ export const addUser = async (req: Request, res: Response) => {
       })
 
       if (getExistingUser.length === 0) {
-        const newUser = new Users(req.body)
+        const newUser = new Users({
+          ...req.body,
+          userType: userType ? userType : "User"
+        })
 
         const createProject = await newUser.save()
 
