@@ -58,7 +58,10 @@ export default function Header() {
         className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between"
         aria-label="Global"
       >
-        <Link href="/" className={`flex ml-16 items-center justify-center text-[3rem]`}>
+        <Link
+          href="/"
+          className={`flex ml-16 items-center justify-center text-[3rem]`}
+        >
           AGI
         </Link>
         <div className="flex lg:hidden py-6">
@@ -78,8 +81,11 @@ export default function Header() {
           className={"hidden lg:flex lg:gap-x-12 justify-center items-center"}
         >
           {navigation.map((item) => (
-              <div key={item.name} className={`${item.name === "LEGAL" ? "group" : ""} py-5`}>
-                            <Link href={item.href}>
+            <div
+              key={item.name}
+              className={`${item.name === "LEGAL" ? "group" : ""} py-5`}
+            >
+              <Link href={item.href}>
                 <button
                   onClick={() => handleNavigationClick(item)}
                   className={`${
@@ -91,27 +97,27 @@ export default function Header() {
                   {item.name}
                   {item.name === "LEGAL" && <ChevronDown />}
                 </button>
-                </Link>
-                <div className="invisible absolute z-50 flex w-52 justify-center flex-col my-5 bg-white text-gray-800 shadow-xl group-hover:visible">
-                  <div className="h-1 bg-primary-500"></div>
-                  <div className={"grid grid-rows my-2 mx-3"}>
-                    {navigationLegal.map((item) => (
-                      <Link key={item.name} href={item.href}>
-                        <button
-                          onClick={() => handleNavigationClick(item)}
-                          className={`${
-                            activeNavItem === item
-                              ? " text-primary-300"
-                              : "hover:bg-gray-100 text-gray-500"
-                          } text-sm font-bold leading-6 py-1 w-full text-start`}
-                        >
-                          {item.name}
-                        </button>
-                      </Link>
-                    ))}
-                  </div>
+              </Link>
+              <div className="invisible absolute z-50 flex w-52 justify-center flex-col my-5 bg-white text-gray-800 shadow-xl group-hover:visible">
+                <div className="h-1 bg-primary-500"></div>
+                <div className={"grid grid-rows my-2 mx-3"}>
+                  {navigationLegal.map((item) => (
+                    <Link key={item.name} href={item.href}>
+                      <button
+                        onClick={() => handleNavigationClick(item)}
+                        className={`${
+                          activeNavItem === item
+                            ? " text-primary-300"
+                            : "hover:bg-gray-100 text-gray-500"
+                        } text-sm font-bold leading-6 py-1 w-full text-start`}
+                      >
+                        {item.name}
+                      </button>
+                    </Link>
+                  ))}
                 </div>
               </div>
+            </div>
           ))}
 
           <Link
