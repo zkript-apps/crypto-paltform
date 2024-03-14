@@ -41,7 +41,7 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 xl:col-span-2 lg:ml-20 ml-10 mt-5">
             <div>
               <h3 className="text-sm font-extrabold leading-6 text-primary-500">
-                PURSUE
+              VERFOLGEN
               </h3>
               <ul role="list" className="mt-4 space-y-1">
                 {navigation.company.map((item) => (
@@ -59,7 +59,7 @@ export default function Footer() {
             <div className="md:grid md:grid-cols-2 md:gap-20">
               <div>
                 <h3 className="text-sm font-extrabold leading-6 text-primary-500">
-                  CONTACT
+                KONTAKT
                 </h3>
                 <ul role="list" className="mt-4 space-y-1">
                   {navigation.legal.map((item) => (
@@ -80,11 +80,11 @@ export default function Footer() {
       </div>
       <div className="bg-primary-950 h-auto">
         <div className="mx-auto max-w-7xl text-center text-sm">
-          <div className="h-[3rem] text-white grid lg:grid-cols-7 justify-center items-center md:grid-cols-4 grid-cols-2 lg:ml-24">
-            <Link href="#">Change privacy settings</Link>
-            <Link href="#">History of privacy settings</Link>
-            <Link href="#">Revoke consent</Link>
-            <Link href="#">Reset password</Link>
+          <div className="h-[3rem] text-white grid lg:grid-cols-5 justify-center items-center md:grid-cols-4 grid-cols-2 lg:ml-24">
+            <Link href="#">Datenschutzeinstellungen ändern</Link>
+            <Link href="#">Verlauf der Datenschutzeinstellungen</Link>
+            <Link href="#">Einwilligung widerrufen</Link>
+            <Link href="#">Passwort zurücksetzen</Link>
           </div>
         </div>
       </div>

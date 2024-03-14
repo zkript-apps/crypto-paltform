@@ -9,10 +9,10 @@ import { Popover, Transition } from "@headlessui/react"
 import { ChevronDown } from "lucide-react"
 
 const navigation = [
-  { name: "HOME", href: "/home" },
+  { name: "HEIM", href: "/home" },
   { name: "AGI", href: "/about" },
-  { name: "MY ACCOUNT", href: "/my-account" },
-  { name: "LEGAL", href: "#" },
+  { name: "MEIN KONTO", href: "/my-account" },
+  { name: "RECHTLICH", href: "#" },
 ]
 
 const navigationLegal = [
@@ -118,7 +118,7 @@ export default function Header() {
             href="#"
             className="mr-24 text-md font-bold leading-6 text-gray-500"
           >
-            LOG IN
+            EINLOGGEN
           </Link>
         </div>
       </nav>
@@ -173,7 +173,7 @@ export default function Header() {
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Log in
+                  EINLOGGEN
                 </Link>
               </div>
             </div>
