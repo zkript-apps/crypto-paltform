@@ -1,13 +1,15 @@
 export class ApiService {
   private BASE_URL: string | undefined
+  private SOURCE: string | undefined
 
-  constructor(source: "main" | "auth" | "mock" = "main") {
+  constructor(source: "main" | "coinapi" = "main") {
+    this.SOURCE = source;
     if (source === "main") {
       this.BASE_URL = process.env.API_URL
-    } else if (source === "auth") {
-      this.BASE_URL = process.env.API_AUTH_URL
+    } else if (source === "coinapi") {
+      this.BASE_URL = process.env.COINAPI_URL
     } else {
-      this.BASE_URL = process.env.API_MOCK_URL
+      this.BASE_URL = process.env.API_URL
     }
   }
 
@@ -15,6 +17,9 @@ export class ApiService {
     const headers = {
       ...(!removeContentType && {
         "Content-Type": "application/json",
+      }),
+      ...(this.SOURCE === "coinapi" && {
+        "X-CoinAPI-Key": process.env.COINAPI_KEY
       }),
     } as Record<string, any>
     const options = {
