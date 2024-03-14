@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 
 const navigation = {
   company: [
@@ -45,12 +46,12 @@ export default function Footer() {
               <ul role="list" className="mt-4 space-y-1">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
-                    <a
+                    <Link
                       href={item.href}
                       className="text-md font-bold leading-6 text-gray-300 hover:text-white"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -63,12 +64,12 @@ export default function Footer() {
                 <ul role="list" className="mt-4 space-y-1">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className="text-md font-bold leading-6 text-gray-300 hover:text-white"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -80,10 +81,10 @@ export default function Footer() {
       <div className="bg-primary-950 h-auto">
         <div className="mx-auto max-w-7xl text-center text-sm">
           <div className="h-[3rem] text-white grid lg:grid-cols-7 justify-center items-center md:grid-cols-4 grid-cols-2 lg:ml-24">
-            <a>Change privacy settings</a>
-            <a>History of privacy settings</a>
-            <a>Revoke consent</a>
-            <a>Reset password</a>
+            <Link href="#">Change privacy settings</Link>
+            <Link href="#">History of privacy settings</Link>
+            <Link href="#">Revoke consent</Link>
+            <Link href="#">Reset password</Link>
           </div>
         </div>
       </div>
