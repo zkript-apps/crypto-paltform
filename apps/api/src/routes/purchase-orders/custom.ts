@@ -10,7 +10,7 @@ export const getPaginatedPurchaseOrders = async (
   try {
     const startIndex = (Number(page) - 1) * 5
     const endIndex = startIndex + 5
-    if(email) {
+    if (email) {
       const purchaseOrdersCounts = await PurchaseOrders.find({
         deletedAt: { $exists: false },
         email,
@@ -23,7 +23,7 @@ export const getPaginatedPurchaseOrders = async (
         startIndex,
         endIndex
       )
-  
+
       res.json({
         error: false,
         items: paginatedPurchaseOrders,
@@ -33,16 +33,16 @@ export const getPaginatedPurchaseOrders = async (
       })
     } else {
       const purchaseOrdersCounts = await PurchaseOrders.find({
-        deletedAt: { $exists: false }
+        deletedAt: { $exists: false },
       }).countDocuments()
       const getAllPurchaseOrders = await PurchaseOrders.find({
-        deletedAt: { $exists: false }
+        deletedAt: { $exists: false },
       }).sort({ createdAt: -1 })
       const paginatedPurchaseOrders = getAllPurchaseOrders.slice(
         startIndex,
         endIndex
       )
-  
+
       res.json({
         error: false,
         items: paginatedPurchaseOrders,
@@ -51,7 +51,6 @@ export const getPaginatedPurchaseOrders = async (
         message: null,
       })
     }
-    
   } catch (err: any) {
     const message = err.message ? err.message : UNKNOWN_ERROR_OCCURRED
     res.json({

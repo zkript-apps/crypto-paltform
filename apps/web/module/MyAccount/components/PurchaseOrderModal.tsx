@@ -5,30 +5,28 @@ import { Dialog, Transition } from '@headlessui/react'
 import ModalWrapper from "./ModalWrapper";
 
 interface PurchaseOrderModalProps {
-  isOpen: boolean;
-  onClose: () => void;
+  isOpen: boolean
+  onClose: () => void
   id?: string
 }
 
 const PurchaseOrderModal = ({
   isOpen,
   onClose,
-  id
+  id,
 }: PurchaseOrderModalProps) => {
-  if (!isOpen) return null;
+  if (!isOpen) return null
   return (
     <>
       <Transition.Root show={isOpen} as={Fragment}>
-      <Dialog as="div" className="relative z-10" onClose={onClose}>
-        <ModalWrapper>
-          <PurchaseOrderForm onClose={onClose} id={id} />
-        </ModalWrapper>
-      </Dialog>
-    </Transition.Root>
+        <Dialog as="div" className="relative z-10" onClose={onClose}>
+          <ModalWrapper>
+            <PurchaseOrderForm onClose={onClose} id={id} />
+          </ModalWrapper>
+        </Dialog>
+      </Transition.Root>
     </>
-    
-    
-  );
-};
+  )
+}
 
-export default PurchaseOrderModal;
+export default PurchaseOrderModal
