@@ -52,8 +52,8 @@ const TestAuth = () => {
   }
 
   const getUserInfo = async () => {
-    const userInfo = await torus?.getUserInfo("");
-    console.log('dsds', userInfo)
+    const userInfo = await torus?.getUserInfo("")
+    console.log("dsds", userInfo)
   }
 
   return <div onClick={() => logout()}>index</div>
