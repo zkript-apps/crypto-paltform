@@ -45,9 +45,7 @@ const ConfirmationModal = ({
             </svg>
             <div className="text-center">
               <h3 className="text-lg font-bold mt-6">{title}</h3>
-              <p className="mb-4 text-gray-500">
-                {body}
-              </p>
+              <p className="mb-4 text-gray-500">{body}</p>
             </div>
             <div className="grid grid-cols-2 justify-center items-center mt-6 gap-x-4">
               <button
