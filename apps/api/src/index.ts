@@ -3,6 +3,7 @@ import cors from "cors"
 import cookies from "cookie-parser"
 import { port, origins } from "@/common/config"
 import routes from "@/routes"
+import "./common/utils/mongo"
 
 const cp = express()
 cp.disable("x-powered-by")
