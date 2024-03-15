@@ -76,7 +76,7 @@ export const addPurchaseOrders = async (req: Request, res: Response) => {
     tokenCurrentPrice,
     estimatedTokenAmount,
     walletId,
-    status
+    status,
   } = req.body
 
   if (
@@ -88,7 +88,10 @@ export const addPurchaseOrders = async (req: Request, res: Response) => {
     walletId
   ) {
     try {
-      const newPurchaseOrder = new PurchaseOrders({...req.body, status: "Pending"})
+      const newPurchaseOrder = new PurchaseOrders({
+        ...req.body,
+        status: "Pending",
+      })
 
       const createPurchaseOrder = await newPurchaseOrder.save()
 

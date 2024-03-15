@@ -1,5 +1,5 @@
 export type T_Purchase_Orders = {
-  _id?: string,
+  _id?: string
   userId?: string
   email: string
   amountMoney: number
@@ -11,7 +11,7 @@ export type T_Purchase_Orders = {
 }
 
 export type T_Update_Purchase_Orders = {
-  _id?: string,
+  _id?: string
   userId?: string
   email?: string
   amountMoney?: number

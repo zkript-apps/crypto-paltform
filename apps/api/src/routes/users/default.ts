@@ -79,7 +79,7 @@ export const addUser = async (req: Request, res: Response) => {
       if (getExistingUser.length === 0) {
         const newUser = new Users({
           ...req.body,
-          userType: userType ? userType : "User"
+          userType: userType ? userType : "User",
         })
 
         const createProject = await newUser.save()
