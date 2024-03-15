@@ -9,5 +9,7 @@ module.exports = {
   images: {},
   env: {
     API_URL: process.env.API_URL,
+    COINAPI_URL: process.env.COINAPI_URL,
+    COINAPI_KEY: process.env.COINAPI_KEY,
   },
 }
