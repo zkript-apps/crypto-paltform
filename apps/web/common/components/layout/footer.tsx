@@ -80,7 +80,7 @@ export default function Footer() {
       </div>
       <div className="bg-primary-950 h-auto">
         <div className="mx-auto max-w-7xl text-center text-sm">
-          <div className="h-[3rem] text-white grid lg:grid-cols-5 justify-center items-center md:grid-cols-4 grid-cols-2 lg:ml-24">
+          <div className="h-[3rem] text-white grid lg:flex justify-center lg:justify-start items-center md:grid-cols-4 grid-cols-2 lg:ml-24 lg:space-x-12">
             <Link href="#">Datenschutzeinstellungen ändern</Link>
             <Link href="#">Verlauf der Datenschutzeinstellungen</Link>
             <Link href="#">Einwilligung widerrufen</Link>

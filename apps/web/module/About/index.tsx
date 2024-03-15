@@ -183,7 +183,7 @@ export default function About() {
     <>
       <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
         <div className="grid mb-auto bg-black w-full lg:h-[50rem] h-auto justify-center items-center">
-          <div className="grid  -gap-x-20 sm:pb-10 lg:grid-cols-2 sm:grid-cols-1 bg-black w-full lg:h-[40rem] h-auto justify-center">
+          <div className="grid -gap-x-20 sm:pb-10 lg:grid-cols-2 sm:grid-cols-1 bg-black w-full lg:h-[40rem] h-auto justify-center">
             <div className="flex-col">
               <h1 className="lg:size-[33rem] lg:ml-32 text-white lg:text-[5rem] md:text-[35px] md:ml-5 sm:text-[25px] font-bold font-sans leading-[7rem] sm:ml-10">
                 Die #42 und der Bot
@@ -211,12 +211,12 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="grid mb-auto w-full h-auto justify-center items-center">
-          <div className="lg:flex w-auto grid-cols-1 lg:m-0 h-auto justify-center mx-auto">
-            <div className="border-primary-500 border lg:h-auto lg:w-[39rem] lg:mb-[16rem] lg:ml-24 lg:-mt-[20rem] lg:mx-0 mx-[4rem] bg-white flex items-center">
+        <div className="mb-auto w-full h-auto justify-center items-center">
+          <div className="lg:flex w-auto lg:mr-0 h-auto justify-center mx-auto">
+            <div className="border-primary-500 border lg:h-auto lg:w-full lg:mb-[1rem] lg:-mt-[13rem] lg:mx-24 mx-[4rem] bg-white flex items-center">
               {" "}
               {/* Updated this line */}
-              <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-[25rem] lg:mx-10 mx-5 h-auto">
+              <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-full lg:mx-10 mx-5 h-auto">
                 <h1 className="font-bold lg:text-[3rem] text-[1.5rem] h-auto text-left">
                 “Maximierung der Synergie: Die QCI und die NoosphereApp – 
                 Die Stärke der Integration verschiedener Technologien mit schneller und großvolumiger Skalierbarkeit: 
@@ -299,7 +299,8 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className="items-end lg:ml-5 pb-[16rem]  sm:mx-10 sm:mt-5 flex">
+            </div>
+            <div className="lg:ml-5 pb-[12rem] sm:mx-10 sm:mt-5 flex">
               <Image
                 src="/homepage_image.png"
                 alt="Your Company"
@@ -307,7 +308,6 @@ export default function About() {
                 height={600}
                 className="mx-auto h-auto w-auto"
               />
-            </div>
           </div>
         </div>
         <div className="bg-black -mt-28">

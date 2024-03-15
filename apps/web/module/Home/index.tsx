@@ -45,7 +45,13 @@ const tweetNews = [
   "1702680806919975174",
   "1714546619465564615",
   "1725399460413645047",
-  "1719161763084513316"
+  "1719161763084513316",
+  "1739982491950416081",
+  "1739954255371329642",
+  "1708828657060548818",
+  "1741665601272111186",
+  "1755834173032439972",
+  "1744381009846587621",
 ]
 
 export default function Home() {
@@ -54,8 +60,8 @@ export default function Home() {
   return (
     <>
       <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
-        <div className="grid mb-auto bg-black w-full h-auto justify-center items-center">
-          <div className="grid ml-10 -gap-x-20 lg:grid-cols-2 grid-cols-1 bg-black w-full h-auto justify-center">
+        <div className="grid mb-auto bg-black w-full h-auto justify-center pb-16 items-center">
+          <div className="grid -gap-x-20 lg:grid-cols-2 grid-cols-1 bg-black w-full h-auto justify-center">
             <h1 className="lg:w-[30rem] lg:ml-36 mt-20 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-bold font-sans leading-[8rem] sm:ml-10">
               Die Zukunft mit #42
             </h1>
@@ -72,12 +78,12 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="grid mb-auto w-full h-auto justify-center items-center">
-          <div className="lg:flex grid w-auto lg:grid-cols-2 grid-cols-1 lg:ml-44 h-auto justify-center mx-auto">
-            <div className="border-primary-500 border lg:h-auto lg:w-[39rem] lg:mb-[12rem] lg:-ml-[5.5rem] lg:-mt-[12rem] lg:mx-0 mx-[4rem] bg-white flex items-center">
+        <div className="mb-auto w-full h-auto justify-center items-center">
+          <div className="lg:flex w-auto lg:ml-44 h-auto justify-center mx-auto">
+            <div className="border-primary-500 border lg:h-auto lg:w-full lg:mb-[1rem] lg:-ml-[5.5rem] lg:-mt-[10rem] lg:mx-0 mx-[4rem] bg-white flex items-center">
               {" "}
               {/* Updated this line */}
-              <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-[25rem] lg:mx-10 mx-5 h-auto">
+              <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-full lg:mx-10 mx-5 h-auto">
                 <h1 className="font-bold lg:text-[3rem] text-[1.5rem] h-auto text-left">
                 “Die Bedeutung von High Performance Computing für Künstliche Intelligenz: Beschleunigung von Datenverarbeitung und Modelltraining”
                 </h1>
@@ -93,7 +99,8 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="items-end lg:ml-5 pb-[12rem] sm:mx-10 sm:mt-5 flex">
+          </div>
+          <div className="lg:ml-5 pb-[12rem] sm:mx-10 sm:mt-5 flex">
               <Image
                 src="/homepage_image.png"
                 alt="Your Company"
@@ -102,7 +109,6 @@ export default function Home() {
                 className="mx-auto h-auto w-auto"
               />
             </div>
-          </div>
         </div>
         <div className="bg-black -mt-28">
           <div className="mx-auto max-w-7xl px-6 pt-16 sm:pt-24 lg:px-8 lg:pt-32 items-center justify-center">
