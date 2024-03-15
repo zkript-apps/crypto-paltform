@@ -1,5 +1,5 @@
 import React from "react";
-import PurchaseOrderForm from "./PurchaseOrderForm";
+import PurchaseOrderForm from "../PurchaseOrderForm";
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 

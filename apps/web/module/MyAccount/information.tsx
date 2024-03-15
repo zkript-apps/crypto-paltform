@@ -1,5 +1,5 @@
 import { loggedInAccount } from '@/common/store/sampleAccount'
-import { Bell, UserRound } from 'lucide-react'
+import { AtSign, Banknote, CandlestickChart, Landmark, Wallet } from 'lucide-react'
 import React from 'react'
 
 function Information() {
@@ -8,23 +8,33 @@ function Information() {
     {
       title: "Email",
       value: email,
-      icon: Bell
+      icon: AtSign
     },
     {
       title: "Wallet ID",
       value: walletId,
-      icon: UserRound
+      icon: Wallet
     },
     {
       title: "Investment",
       value: "$2,000.00",
-      icon: Bell
+      icon: Landmark
+    },
+    {
+      title: "Price",
+      value: "$0.0000",
+      icon: Banknote
+    },
+    {
+      title: "Change in value",
+      value: "0%",
+      icon: CandlestickChart
     },
   ]
   return (
     <div className='px-4 text-left sm:px-6 lg:px-8 w-full'>
       <div className="sm:flex-auto">
-        <h1 className="text-lg font-semibold leading-6 text-gray-900">Other Information</h1>
+        <h1 className="text-lg font-semibold leading-6 text-gray-900">Wallet Overview</h1>
         <p className="text-sm font-semibold text-gray-600">
          User, wallet, and coin information for viewing.
         </p>

@@ -58,29 +58,27 @@ const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
     if (!id) {
       addPurchaseOrder(formattedData, {
         onSuccess: () => {
-          console.log('success')
           toast.success("Your purchase order has been successfully placed");
           queryClient.invalidateQueries({ queryKey: ['paginated-purchase-orders'] })
           reset(),
           setTokenAmount(0)
           onClose()
         },
-        onError(err) {
-          console.log(err)
+        onError() {
+          toast.error("An error occurred while placing your purchase order");
         }
       })
     } else {
       updatePurchaseOrder(formattedData, {
         onSuccess: () => {
-          console.log('success')
           toast.success("Your purchase order has been successfully updated");
           queryClient.invalidateQueries({ queryKey: ['paginated-purchase-orders'] })
           queryClient.invalidateQueries({ queryKey: ['purchase-order'] })
           reset(),
           onClose()
         },
-        onError(err) {
-          console.log(err)
+        onError() {
+          toast.error("An error occurred while updating your purchase order");
         }
       })
     }

@@ -32,8 +32,13 @@ export default function MyAccount() {
               <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-primary-500 border w-9/12 flex">
                 <Table />
               </div>
-              <div className="bg-white h-max py-8 rounded-2xl mt-5 border-primary-500 border w-3/12 flex">
-                <Information />
+              <div className="w-3/12 ">
+                <div className="bg-white h-max py-8 rounded-2xl mt-5 border-primary-500 border flex">
+                  <Information />
+                </div>
+                <h1 className="text-md font-normal mt-4 text-white">
+                  Balance piece: 0 x price: 1.3340 € = value: 0.00 €
+                </h1>
               </div>
             </div>
 
