@@ -3,7 +3,7 @@ export class ApiService {
   private SOURCE: string | undefined
 
   constructor(source: "main" | "coinapi" = "main") {
-    this.SOURCE = source;
+    this.SOURCE = source
     if (source === "main") {
       this.BASE_URL = process.env.API_URL
     } else if (source === "coinapi") {
@@ -19,7 +19,7 @@ export class ApiService {
         "Content-Type": "application/json",
       }),
       ...(this.SOURCE === "coinapi" && {
-        "X-CoinAPI-Key": process.env.COINAPI_KEY
+        "X-CoinAPI-Key": process.env.COINAPI_KEY,
       }),
     } as Record<string, any>
     const options = {
