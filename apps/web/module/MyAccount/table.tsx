@@ -3,7 +3,14 @@ import useGetPaginatedPurchaseOrders from "@/common/hooks/purchaseOrders/usetGet
 import { loggedInAccount } from "@/common/store/sampleAccount"
 import PurchaseOrderModal from "./components/PurchaseOrderModal"
 import { useState } from "react"
-import { ChevronLeft, ChevronLeftIcon, ChevronRightIcon, ChevronsLeft, ChevronsRight, PlusIcon } from "lucide-react"
+import {
+  ChevronLeft,
+  ChevronLeftIcon,
+  ChevronRightIcon,
+  ChevronsLeft,
+  ChevronsRight,
+  PlusIcon,
+} from "lucide-react"
 import useUpdatePurchaseOrder from "@/common/hooks/purchaseOrders/useUpdatePurchaseOrder"
 import toast from "react-hot-toast"
 import { useQueryClient } from "@tanstack/react-query"
@@ -15,7 +22,7 @@ export default function Example() {
   const { email, userType } = loggedInAccount
 
   const [isOpenModal, setIsOpenModal] = useState(false)
-  const [pageNumber, setPageNumber] = useState(1) 
+  const [pageNumber, setPageNumber] = useState(1)
   const [isRejectModalOpen, setIsRejectModalOpen] = useState(false)
   const [isAcceptModalOpen, setIsAcceptModalOpen] = useState(false)
   const [selectedId, setSelectedId] = useState("")
@@ -25,29 +32,31 @@ export default function Example() {
     userType === "User" ? email : ""
   )
 
-  const maxPageNumber = Math.ceil(data?.itemAllCount / 5);
+  const maxPageNumber = Math.ceil(data?.itemAllCount / 5)
   const { mutate, isPending } = useUpdatePurchaseOrder(selectedId)
-    
-  const handlePagination = (action: "Previous" | "Next" | "FirstPage" | "LastPage") => {
+
+  const handlePagination = (
+    action: "Previous" | "Next" | "FirstPage" | "LastPage"
+  ) => {
     switch (action) {
       case "Previous":
         if (pageNumber > 1) {
-          setPageNumber(pageNumber - 1);
+          setPageNumber(pageNumber - 1)
         }
-        break;
+        break
       case "Next":
         if (pageNumber < maxPageNumber) {
-          setPageNumber(pageNumber + 1);
+          setPageNumber(pageNumber + 1)
         }
-        break;
+        break
       case "FirstPage":
-        setPageNumber(1);
-        break;
+        setPageNumber(1)
+        break
       case "LastPage":
-        setPageNumber(maxPageNumber);
-        break;
+        setPageNumber(maxPageNumber)
+        break
       default:
-        break;
+        break
     }
     queryClient.invalidateQueries({
       queryKey: ["paginated-purchase-orders"],
@@ -217,46 +226,47 @@ export default function Example() {
             </div>
           </div>
           <div>
-          <nav className="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-            <button
-              onClick={() => handlePagination("FirstPage")}
-              disabled={pageNumber === 1}
-              className="inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0"
+            <nav
+              className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+              aria-label="Pagination"
             >
-              <span className="sr-only">First page</span>
-              <ChevronsLeft className="h-5 w-5" aria-hidden="true" />
-            </button>
-            <button
-              onClick={() => handlePagination("Previous")}
-              disabled={pageNumber === 1}
-              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0"
-            >
-              <span className="sr-only">Previous</span>
-              <ChevronLeft className="h-5 w-5" aria-hidden="true" />
-            </button>
-            <div
-              className="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0"
-            >
-              {pageNumber}
-            </div>
-            <button
-              onClick={() => handlePagination("Next")}
-              disabled={pageNumber === maxPageNumber}
-              className="hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0 md:inline-flex"
-            >
-              <span className="sr-only">Next</span>
-              <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-            </button>
-            <button
-              onClick={() => handlePagination("LastPage")}
-              disabled={pageNumber === maxPageNumber}
-              className="inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0"
-            >
-              <span className="sr-only">Last Page</span>
-              <ChevronsRight className="h-5 w-5" aria-hidden="true" />
-            </button>
-          </nav>
-        </div>
+              <button
+                onClick={() => handlePagination("FirstPage")}
+                disabled={pageNumber === 1}
+                className="inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0"
+              >
+                <span className="sr-only">First page</span>
+                <ChevronsLeft className="h-5 w-5" aria-hidden="true" />
+              </button>
+              <button
+                onClick={() => handlePagination("Previous")}
+                disabled={pageNumber === 1}
+                className="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0"
+              >
+                <span className="sr-only">Previous</span>
+                <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+              </button>
+              <div className="inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0">
+                {pageNumber}
+              </div>
+              <button
+                onClick={() => handlePagination("Next")}
+                disabled={pageNumber === maxPageNumber}
+                className="hidden items-center px-4 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0 md:inline-flex"
+              >
+                <span className="sr-only">Next</span>
+                <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+              </button>
+              <button
+                onClick={() => handlePagination("LastPage")}
+                disabled={pageNumber === maxPageNumber}
+                className="inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-100 focus:z-20 focus:outline-offset-0"
+              >
+                <span className="sr-only">Last Page</span>
+                <ChevronsRight className="h-5 w-5" aria-hidden="true" />
+              </button>
+            </nav>
+          </div>
         </div>
       </div>
       <PurchaseOrderModal
