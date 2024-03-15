@@ -21,7 +21,6 @@ interface GroupEstimateFormProps {
 }
 
 const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
-  const [tokenAmount, setTokenAmount] = useState(0);
   const tokenCurrentPrice = 25023
   const { email, walletId, _id: userId } = loggedInAccount
 
@@ -29,26 +28,25 @@ const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
   const { data, isLoading } = useGetPurchaseOrder(id!)
   const { mutate: addPurchaseOrder, isPending: isAddPurchaseOrderPending } = useAddPurchaseOrder()
   const { mutate: updatePurchaseOrder, isPending: isUpdatePurchaseOrderPending } = useUpdatePurchaseOrder(id!)
-  
+
+  const [tokenAmount, setTokenAmount] = useState(id ? data?.item.estimatedTokenAmount : 0);
+
   const {
     reset,
     register,
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<FormValues>({
-    defaultValues: {
-      tokenCurrentPrice,
-    },
-    values: {
-      ...data?.item
-    }
+      defaultValues: {
+          tokenCurrentPrice,
+      },
+      values: data?.item,
   });
 
   const getEstimatedTokenAmount = (amountMoney: number) => {
     setTokenAmount(amountMoney / tokenCurrentPrice)
   }
 
-  
   const onSubmit = (data: FormValues) => {
     const formattedData = {
       ...data,
@@ -65,6 +63,7 @@ const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
           queryClient.invalidateQueries({ queryKey: ['paginated-purchase-orders'] })
           reset(),
           setTokenAmount(0)
+          onClose()
         },
         onError(err) {
           console.log(err)
@@ -76,8 +75,9 @@ const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
           console.log('success')
           toast.success("Your purchase order has been successfully updated");
           queryClient.invalidateQueries({ queryKey: ['paginated-purchase-orders'] })
+          queryClient.invalidateQueries({ queryKey: ['purchase-order'] })
           reset(),
-          setTokenAmount(0)
+          onClose()
         },
         onError(err) {
           console.log(err)

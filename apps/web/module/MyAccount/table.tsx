@@ -38,7 +38,7 @@ export default function Example() {
         <div className="mt-4 sm:mt-0 sm:flex-none justify-end">
           <button
             type="button"
-            onClick={() => setIsOpenModal(true)}
+            onClick={() => {setIsOpenModal(true); setSelectedId("")}}
             className="block rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
             Add Purchase Order
