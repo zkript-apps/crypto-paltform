@@ -18,7 +18,7 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bottom-0  bg-black" aria-labelledby="footer-heading">
+    <footer className="bottom-0 bg-[#130c21]" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -40,7 +40,7 @@ export default function Footer() {
 
           <div className="grid grid-cols-2 gap-8 xl:col-span-2 lg:ml-20 ml-10 mt-5">
             <div>
-              <h3 className="text-sm font-extrabold leading-6 text-primary-500">
+              <h3 className="text-sm font-extrabold leading-6 text-celestial-blue">
               VERFOLGEN
               </h3>
               <ul role="list" className="mt-4 space-y-1">
@@ -58,7 +58,7 @@ export default function Footer() {
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-20">
               <div>
-                <h3 className="text-sm font-extrabold leading-6 text-primary-500">
+                <h3 className="text-sm font-extrabold leading-6 text-celestial-blue">
                 KONTAKT
                 </h3>
                 <ul role="list" className="mt-4 space-y-1">
@@ -78,7 +78,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-primary-950 h-auto">
+      <div className="bg-tekhelet h-auto">
         <div className="mx-auto max-w-7xl text-center text-sm">
           <div className="h-[3rem] text-white grid lg:flex justify-center lg:justify-start items-center md:grid-cols-4 grid-cols-2 lg:ml-24 lg:space-x-12">
             <Link href="#">Datenschutzeinstellungen ändern</Link>

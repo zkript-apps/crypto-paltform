@@ -20,32 +20,32 @@ export default function MyAccount() {
   return (
     <>
       <div className="lg:mx-auto mb-auto items-center justify-between">
-        <div className="grid bg-dark-950 lg:h-auto justify-center items-center text-center pb-24">
+        <div className="grid bg-persian-indigo lg:h-auto justify-center items-center text-center pb-24">
           <div className="mx-10">
             <h1 className="py-28 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-semibold font-sans">
               AGI | Mein Konto
             </h1>
 
-            <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-primary-500 border justify-center items-center flex">
+            <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-tekhelet border justify-center items-center flex">
               <button
                 onClick={() => walletRegisterClick()}
                 type="button"
-                className="text-[1.2rem] relative shadow-lg rounded-md bg-primary-500 px-5 py-4 font-normal text-white hover:bg-primary-700 overflow-hidden group"
+                className="text-[1.2rem] relative shadow-lg rounded-md bg-mardi-gras px-5 py-4 font-normal text-white hover:bg-pink-600 overflow-hidden group"
               >
                 Wallet Registrieren
               </button>
             </div>
-            <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-primary-500 border justify-center items-center flex">
+            <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-tekhelet border justify-center items-center flex">
               <button
                 onClick={() => orderClick()}
                 type="button"
-                className="text-[1.2rem] relative shadow-lg rounded-md bg-primary-500 px-16 py-4 font-normal text-white hover:bg-primary-700 overflow-hidden group"
+                className="text-[1.2rem] relative shadow-lg rounded-md bg-mardi-gras px-16 py-4 font-normal text-white hover:bg-pink-600 overflow-hidden group"
               >
                 Befehl
               </button>
             </div>
 
-            <div className="bg-white flex-col w-full h-auto py-10 rounded-2xl mt-5 border-primary-500 border justify-center items-center flex">
+            <div className="bg-white flex-col w-full h-auto py-10 rounded-2xl mt-5 border-tekhelet border justify-center items-center flex">
               <h1 className="underline text-[2rem] font-extrabold">
                 Wallet Übersicht:
               </h1>
@@ -58,7 +58,7 @@ export default function MyAccount() {
               <div className="grid grid-cols-3 gap-5 text-md font-normal mt-5">
                 <h1>Investition: 0.00 €</h1>
                 <h1>Ø Preis: 0.0000 €</h1>
-                <h1 className="font-bold text-blue-600">
+                <h1 className="font-bold text-celestial-blue">
                 Wertveränderung: 0 %
                 </h1>
               </div>

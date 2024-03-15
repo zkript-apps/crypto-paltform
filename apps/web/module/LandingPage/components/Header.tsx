@@ -12,15 +12,16 @@ const navigation = [
   { name: "HEIM", href: "/home" },
   { name: "AGI", href: "/about" },
   { name: "MEIN KONTO", href: "/my-account" },
-  { name: "RECHTLICH", href: "#" },
+  { name: "RECHTLICHES", href: "#" },
 ]
 
 const navigationLegal = [
-  { name: "IMPRINT", href: "" },
-  { name: "DATA PROTECTION", href: "" },
-  { name: "OUT OF COURT DISPUTE RESOLUTION", href: "" },
+  { name: "IMPRESSUM", href: "/imprint" },
+  { name: "DATENSCHUTZ", href: "/data-protection" },
+  { name: "AUSSERGERICHTLICHE STREITBEILEGUNG", href: "" },
   { name: "DISCLAIMER", href: "" },
-  { name: "RIGHT OF WITHDRAWAL", href: "" },
+  { name: "HAFTUNGSAUSSCHLUSS", href: "" },
+  { name: "WIDERRUFSBELEHRUN", href: "" },
 ]
 
 export default function Header() {
@@ -78,7 +79,7 @@ export default function Header() {
           className={"hidden lg:flex lg:gap-x-12 justify-center items-center"}
         >
           {navigation.map((item) => (
-              <div key={item.name} className={`${item.name === "LEGAL" ? "group" : ""} py-5`}>
+              <div key={item.name} className={`${item.name === "RECHTLICHES" ? "group" : ""} py-5`}>
                             <Link href={item.href}>
                 <button
                   onClick={() => handleNavigationClick(item)}
@@ -89,7 +90,7 @@ export default function Header() {
                   } text-md font-bold leading-6 flex`}
                 >
                   {item.name}
-                  {item.name === "LEGAL" && <ChevronDown />}
+                  {item.name === "RECHTLICHES" && <ChevronDown />}
                 </button>
                 </Link>
                 <div className="invisible absolute z-50 flex w-52 justify-center flex-col my-5 bg-white text-gray-800 shadow-xl group-hover:visible">

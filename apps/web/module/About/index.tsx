@@ -182,8 +182,8 @@ export default function About() {
   return (
     <>
       <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
-        <div className="grid mb-auto bg-black w-full lg:h-[50rem] h-auto justify-center items-center">
-          <div className="grid -gap-x-20 sm:pb-10 lg:grid-cols-2 sm:grid-cols-1 bg-black w-full lg:h-[40rem] h-auto justify-center">
+        <div className="grid mb-auto w-full bg-persian-indigo lg:h-[50rem] h-auto justify-center items-center">
+          <div className="grid -gap-x-20 sm:pb-10 lg:grid-cols-2 sm:grid-cols-1 bg-persian-indigo w-full lg:h-[40rem] h-auto justify-center">
             <div className="flex-col">
               <h1 className="lg:size-[33rem] lg:ml-32 text-white lg:text-[5rem] md:text-[35px] md:ml-5 sm:text-[25px] font-bold font-sans leading-[7rem] sm:ml-10">
                 Die #42 und der Bot
@@ -202,7 +202,7 @@ export default function About() {
               />
               <button
                 type="button"
-                className="relative rounded-md bg-primary-500 px-6 py-5 text-sm  font-bold text-white shadow-sm hover:bg-primary-700 overflow-hidden group"
+                className="relative rounded-md bg-mardi-gras px-6 py-5 text-sm  font-bold text-white shadow-sm hover:bg-pink-600 overflow-hidden group"
               >
                 <div className="flex items-center justify-between">
                   <div>HIER KÖNNEN SIE TOKEN KAUFEN</div>
@@ -213,7 +213,7 @@ export default function About() {
         </div>
         <div className="mb-auto w-full h-auto justify-center items-center">
           <div className="lg:flex w-auto lg:mr-0 h-auto justify-center mx-auto">
-            <div className="border-primary-500 border lg:h-auto lg:w-full lg:mb-[1rem] lg:-mt-[13rem] lg:mx-24 mx-[4rem] bg-white flex items-center">
+            <div className="border-tekhelet border lg:h-auto lg:w-full lg:mb-[1rem] lg:-mt-[13rem] lg:mx-24 mx-[4rem] bg-white flex items-center">
               {" "}
               {/* Updated this line */}
               <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-full lg:mx-10 mx-5 h-auto">
@@ -310,10 +310,10 @@ export default function About() {
               />
           </div>
         </div>
-        <div className="bg-black -mt-28">
+        <div className="bg-persian-indigo -mt-28">
           <div className="lg:mx-auto mx-20 max-w-7xl pt-16 sm:pt-24 lg:px-8 lg:pt-32 items-center justify-center">
             <div className="flex-col lg:ml-16 mt-16 pb-28">
-              <h1 className=" text-primary-500 font-bold text-sm">         
+              <h1 className=" text-persimmon font-bold text-sm">         
               TYPEN UND FUNKTIONEN
               </h1>
               <h1 className=" text-white lg:text-[50px] font-bold font-sans text-[30px] mb-32">
@@ -321,7 +321,7 @@ export default function About() {
               </h1>
               <div className="mt-16 grid lg:grid-cols-3 grid-cols-1 justify-center text-justify gap-10 gap-x-16">
                 <div>
-                  <h1 className="text-primary-500 text-lg font-extrabold">
+                  <h1 className="text-persimmon text-lg font-extrabold">
                     WAS IST EIN BOT?
                   </h1>
                   <p className="text-white font-sans text-md leading-6 font-normal mt-5">
@@ -329,7 +329,7 @@ export default function About() {
                   </p>
                 </div>
                 <div>
-                  <h1 className="text-primary-500 text-lg font-extrabold">
+                  <h1 className="text-persimmon text-lg font-extrabold">
                   WAS IST EIN BOT?
                   </h1>
                   <p className="text-white font-sans text-md leading-6 font-normal mt-5">
@@ -337,7 +337,7 @@ export default function About() {
                   </p>
                 </div>
                 <div>
-                  <h1 className="text-primary-500 text-lg font-extrabold">
+                  <h1 className="text-persimmon text-lg font-extrabold">
                     WAS IST EIN BOT?
                   </h1>
                   <p className="text-white font-sans text-md leading-6 font-normal mt-5">
@@ -348,18 +348,18 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="bg-dark-950">
+        <div className="bg-[#13101c]">
           <div className="mx-auto max-w-7xl lg:px-8 items-center justify-center">
             <div className="mx-auto max-w-7xl sm:pt-24 lg:px-8 items-center justify-center">
               <div className="flex-col lg:ml-10 mx-16">
-                <h1 className=" text-primary-500 font-bold text-sm">
+                <h1 className=" text-persimmon font-bold text-sm">
                 TYPEN UND FUNKTIONEN
                 </h1>
                 <h1 className=" text-white lg:text-[50px] font-bold font-sans text-[30px]">
                   Was ist Künstliche Intelligenz (KI)?
                 </h1>
                 <div className="text-justify">
-                  <h1 className="text-primary-500 font-extrabold pt-16 text-lg">
+                  <h1 className="text-persimmon font-extrabold pt-16 text-lg">
                   DEFINITION VON KI?
                   </h1>
                   <p className="text-white font-sans text-md leading-6 font-normal mt-2">

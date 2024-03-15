@@ -60,8 +60,8 @@ export default function Home() {
   return (
     <>
       <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
-        <div className="grid mb-auto bg-black w-full h-auto justify-center pb-16 items-center">
-          <div className="grid -gap-x-20 lg:grid-cols-2 grid-cols-1 bg-black w-full h-auto justify-center">
+        <div className="grid mb-auto bg-persian-indigo w-full h-auto justify-center pb-16 items-center">
+          <div className="grid -gap-x-20 lg:grid-cols-2 grid-cols-1 bg-persian-indigo w-full h-auto justify-center">
             <h1 className="lg:w-[30rem] lg:ml-36 mt-20 text-white lg:text-[5rem] md:text-[35px] sm:text-[25px] font-bold font-sans leading-[8rem] sm:ml-10">
               Die Zukunft mit #42
             </h1>
@@ -70,7 +70,7 @@ export default function Home() {
               <div className="flex lg:items-start lg:justify-start py-5 items-center justify-center">
                 <button
                   type="button"
-                  className="relative rounded-md bg-primary-500 px-6 py-5 text-sm font-bold text-white shadow-sm hover:bg-primary-700 overflow-hidden group"
+                  className="relative rounded-md bg-mardi-gras px-6 py-5 text-sm font-bold text-white shadow-sm hover:bg-pink-600 overflow-hidden group"
                 >
                   HIER KÖNNEN SIE TOKEN KAUFEN
                 </button>
@@ -80,7 +80,7 @@ export default function Home() {
         </div>
         <div className="mb-auto w-full h-auto justify-center items-center">
           <div className="lg:flex w-auto lg:ml-44 h-auto justify-center mx-auto">
-            <div className="border-primary-500 border lg:h-auto lg:w-full lg:mb-[1rem] lg:-ml-[5.5rem] lg:-mt-[10rem] lg:mx-0 mx-[4rem] bg-white flex items-center">
+            <div className="border-mardi-gras border lg:h-auto lg:w-full lg:mb-[1rem] lg:-ml-[5.5rem] lg:-mt-[10rem] lg:mx-0 mx-[4rem] bg-white flex items-center">
               {" "}
               {/* Updated this line */}
               <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-full lg:mx-10 mx-5 h-auto">
@@ -110,17 +110,17 @@ export default function Home() {
               />
             </div>
         </div>
-        <div className="bg-black -mt-28">
+        <div className="bg-persian-indigo -mt-28">
           <div className="mx-auto max-w-7xl px-6 pt-16 sm:pt-24 lg:px-8 lg:pt-32 items-center justify-center">
             <div className="flex-col ml-20 mt-16 mx-auto">
-              <h1 className=" text-primary-500 font-bold text-sm">DIENSTLEISTUNGEN</h1>
+              <h1 className=" text-persimmon font-bold text-sm">DIENSTLEISTUNGEN</h1>
               <h1 className=" text-white lg:text-[50px] font-bold font-sans pb-32 text-[30px]">
                 Neuigkeiten aus der Szene...
               </h1>
             </div>
           </div>
         </div>
-        <div className="bg-dark-950">
+        <div className="bg-[#13101c]">
           <div className="mx-auto max-w-7xl px-6 sm:pt-24 lg:px-8 lg:py-20 items-center justify-center">
             <div className="grid md:grid-cols-2 gap-16 justify-center items-center lg:mx-20 md:mx-20 mx-10 text-justify">
              {tweetNews.map((tweet, index) => (
