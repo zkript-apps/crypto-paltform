@@ -1,8 +1,8 @@
-import React from "react";
-import PurchaseOrderForm from "../PurchaseOrderForm";
-import { Fragment } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import ModalWrapper from "./ModalWrapper";
+import React from "react"
+import PurchaseOrderForm from "../PurchaseOrderForm"
+import { Fragment } from "react"
+import { Dialog, Transition } from "@headlessui/react"
+import ModalWrapper from "./ModalWrapper"
 
 interface PurchaseOrderModalProps {
   isOpen: boolean
