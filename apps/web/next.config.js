@@ -7,5 +7,7 @@ require("dotenv").config({
 module.exports = {
   reactStrictMode: true,
   images: {},
-  env: {},
+  env: {
+    API_URL: process.env.API_URL,
+  },
 }

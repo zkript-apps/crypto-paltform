@@ -1,15 +1,36 @@
 import { T_Purchase_Orders } from "@/common/hooks/purchaseOrders/types"
 import useGetPaginatedPurchaseOrders from "@/common/hooks/purchaseOrders/usetGetPaginatedPurchaseOrders"
 import { loggedInAccount } from "@/common/store/sampleAccount"
-
-const people = [
-  { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-  // More people...
-]
+import PurchaseOrderModal from "./PurchaseOrderModal"
+import { useState } from "react";
 
 export default function Example() {
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [selectedId, setSelectedId] = useState("");
   const { email } = loggedInAccount
   const { data } = useGetPaginatedPurchaseOrders(1, email)
+
+  const status = (status: "Pending" | "Accepted" | "Rejected") => {
+    if (status === "Pending") {
+        return (
+            <span className="inline-flex items-center rounded-full bg-gray-100 px-2 py-1 text-xs font-medium text-gray-600">
+                Pending
+            </span>
+        );
+    } else if (status === "Accepted") {
+        return (
+            <span className="inline-flex items-center rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-700">
+                Accepted
+            </span>
+        );
+    } else {
+        return (
+            <span className="inline-flex items-center rounded-full bg-red-100 px-2 py-1 text-xs font-medium text-red-700">
+                Rejected
+            </span>
+        );
+    }
+  }
   
   return (
     <div className="px-4 sm:px-6 lg:px-8 w-full">
@@ -17,9 +38,10 @@ export default function Example() {
         <div className="mt-4 sm:mt-0 sm:flex-none justify-end">
           <button
             type="button"
-            className="block rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            onClick={() => setIsOpenModal(true)}
+            className="block rounded-md bg-primary-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Add user
+            Add Purchase Order
           </button>
         </div>
       </div>
@@ -42,17 +64,25 @@ export default function Example() {
                     <th scope="col" className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900">
                       Status
                     </th>
+                    <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0">
+                      <span className="sr-only">Edit</span>
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200 bg-white text-left">
-                  {data.items.map((purchase: T_Purchase_Orders) => (
+                  {data?.items?.map((purchase: T_Purchase_Orders) => (
                     <tr key={purchase.email}>
                       <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-6">
                         {purchase.amountMoney}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{purchase.tokenCurrentPrice}</td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{purchase.estimatedTokenAmount}</td>
-                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{purchase.status}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{status(purchase.status!)}</td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        <button onClick={() => {setIsOpenModal(true); setSelectedId(purchase._id!)}} className="text-primary-600 hover:underline">
+                          Edit
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -61,6 +91,10 @@ export default function Example() {
           </div>
         </div>
       </div>
+      <PurchaseOrderModal
+        isOpen={isOpenModal}
+        onClose={() => setIsOpenModal(false)}
+        id={selectedId} />
     </div>
   )
 }
