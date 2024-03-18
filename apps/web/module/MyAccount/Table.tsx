@@ -8,6 +8,8 @@ import {
   ChevronRightIcon,
   ChevronsLeft,
   ChevronsRight,
+  Copy,
+  CopyCheckIcon,
   HandCoins,
   PlusIcon,
   SendIcon,
@@ -86,6 +88,11 @@ export default function Table() {
     })
   }
 
+  const copyWalletId = (value: string | null) => {
+    navigator.clipboard.writeText(value ? value : "");
+    toast.success("Die Wallet-ID wurde in die Zwischenablage kopiert")
+  }
+
   const handleAcceptPurchaseOrder = () => {
     mutate(
       {
@@ -94,7 +101,7 @@ export default function Table() {
       {
         onSuccess: (data) => {
           toast.success(
-            `Purchase order from ${data.item.email} has been accepted.`
+            `Bestellung bei ${data.item.email} wurde akzeptiert.`
           )
           queryClient.invalidateQueries({
             queryKey: ["paginated-purchase-orders"],
@@ -102,7 +109,7 @@ export default function Table() {
           setIsAcceptModalOpen(false)
         },
         onError() {
-          toast.error("An error occurred while accepting a purchase order")
+          toast.error("Beim Annehmen einer Bestellung ist ein Fehler aufgetreten")
         },
       }
     )
@@ -116,7 +123,7 @@ export default function Table() {
       {
         onSuccess: (data) => {
           toast.success(
-            `Purchase order from ${data.item.email} has been rejected.`
+            `Bestellung bei ${data.item.email} wurde abgelehnt.`
           )
           queryClient.invalidateQueries({
             queryKey: ["paginated-purchase-orders"],
@@ -124,7 +131,7 @@ export default function Table() {
           setIsRejectModalOpen(false)
         },
         onError() {
-          toast.error("An error occurred while rejecting a purchase order")
+          toast.error("Beim Annehmen einer Bestellung ist ein Fehler aufgetreten")
         },
       }
     )
@@ -221,6 +228,12 @@ export default function Table() {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
+                      Wallet-ID
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
                       Status
                     </th>
                     <th
@@ -242,6 +255,11 @@ export default function Table() {
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {purchase.estimatedTokenAmount}
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm">
+                        <button type="button" onClick={() => copyWalletId(purchase.walletId)} className="flex item-center gap-2 text-gray-500 hover:text-gray-800">
+                          Kopieren <Copy className="h-5 w-5"/>
+                        </button>
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         <StatusBadge status={purchase.status!} />

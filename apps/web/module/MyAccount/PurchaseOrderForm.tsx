@@ -12,6 +12,7 @@ type FormValues = {
   amountMoney: number
   tokenCurrentPrice: number
   estimatedTokenAmount: number
+  wireReferenceId: string
 }
 
 interface GroupEstimateFormProps {
@@ -40,14 +41,14 @@ const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
     handleSubmit,
     formState: { errors, isValid },
   } = useForm<FormValues>({
-    values: { 
+    values: {
       ...data?.item,
       ...(!id ? { tokenCurrentPrice: exchangeRate?.rate } : {})
     }
   })
 
   const getEstimatedTokenAmount = (amountMoney: number) => {
-    setTokenAmount(amountMoney / exchangeRate?.rate)
+    setTokenAmount(amountMoney / (id ? data.item?.tokenCurrentPrice : exchangeRate?.rate))
   }
 
   const onSubmit = (data: FormValues) => {
@@ -96,14 +97,14 @@ const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
       >
         <div className="grid gap-4 grid-cols-3">
 
-        <div className="col-span-3 items-start">
+          <div className="col-span-3 items-start">
             <div className="text-left">
               <label
                 htmlFor="tokenCurrentPrice"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                
-Aktueller Token-Preis in Euro
+
+                Aktueller Token-Preis in Euro
               </label>
               <input
                 type="number"
@@ -123,14 +124,15 @@ Aktueller Token-Preis in Euro
                 htmlFor="amountMoney"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                Betrag, den Sie in Euro kaufen möchten
+                Betrag, den Sie in Euro kaufen möchten*
               </label>
               <input
                 className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-450 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
-                {...register("amountMoney")}
+                {...register("amountMoney", { required: true })}
                 onChange={(e) =>
                   getEstimatedTokenAmount(Number(e.currentTarget.value))
                 }
+                type="number"
                 disabled={
                   isLoading ||
                   isAddPurchaseOrderPending ||
@@ -161,6 +163,28 @@ Aktueller Token-Preis in Euro
               )}
             </div>
           </div>
+
+          <div className="col-span-3 items-start">
+            <div className="text-left">
+              <label
+                htmlFor="amountMoney"
+                className="block mb-2 text-sm font-medium text-gray-900 "
+              >
+                Referenznummer übertragen
+              </label>
+              <input
+                className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-450 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50"
+                {...register("wireReferenceId")}
+                disabled={
+                  isLoading ||
+                  isAddPurchaseOrderPending ||
+                  isUpdatePurchaseOrderPending
+                }
+              />
+              {errors.wireReferenceId && <p>{errors.wireReferenceId.message}</p>}
+            </div>
+          </div>
+
         </div>
         <div className="flex mt-6 gap-4 justify-end">
           <button
