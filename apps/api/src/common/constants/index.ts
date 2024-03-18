@@ -9,3 +9,5 @@ export const USER_EXISTS = "User already exists"
 
 // purchase orders
 export const PURCHASE_ORDER_ADDED = "Purchase order successfully added"
+
+export const API_ROOT = "/api"
