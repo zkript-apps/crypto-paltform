@@ -149,7 +149,7 @@ const PurchaseOrderForm = ({ onClose, id }: GroupEstimateFormProps) => {
                 htmlFor="estimatedTokenAmount"
                 className="block mb-2 text-sm font-medium text-gray-900 "
               >
-                Geschätzter Token-Betrag, den Sie erhalten werden
+                Token zum Empfangen
               </label>
               <input
                 type="number"

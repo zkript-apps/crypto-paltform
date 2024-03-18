@@ -222,13 +222,25 @@ export default function Table() {
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
-                      Geschätzter Token-Betrag, den Sie erhalten werden
+                      Token zum Empfangen
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Email
                     </th>
                     <th
                       scope="col"
                       className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                     >
                       Wallet-ID
+                    </th>
+                    <th
+                      scope="col"
+                      className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                    >
+                      Referenznummer übertragen
                     </th>
                     <th
                       scope="col"
@@ -256,10 +268,16 @@ export default function Table() {
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         {purchase.estimatedTokenAmount}
                       </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        {purchase.email ? purchase.email : "-"}
+                      </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm">
                         <button type="button" onClick={() => copyWalletId(purchase.walletId)} className="flex item-center gap-2 text-gray-500 hover:text-gray-800">
                           Kopieren <Copy className="h-5 w-5"/>
                         </button>
+                      </td>
+                      <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                        {purchase.wireReferenceId ? purchase.wireReferenceId : "-"}
                       </td>
                       <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
                         <StatusBadge status={purchase.status!} />
