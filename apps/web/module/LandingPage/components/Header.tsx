@@ -1,59 +1,40 @@
 "use client"
 
-import { useState, useEffect, Fragment } from "react"
+import { useState } from "react"
 import { Dialog } from "@headlessui/react"
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
-import Image from "next/image"
 import Link from "next/link"
-import { Popover, Transition } from "@headlessui/react"
 import { ChevronDown } from "lucide-react"
+import { usePathname } from "next/navigation"
 
 const navigation = [
-  { name: "HEIM", href: "/home" },
-  { name: "AGI", href: "/about" },
-  { name: "MEIN KONTO", href: "/my-account" },
-  { name: "RECHTLICHES", href: "#" },
+  { name: "HEIM", href: "/heim" },
+  { name: "AGI", href: "/agi" },
+  { name: "MEIN KONTO", href: "/mein-konto" },
+  { name: "RECHTLICHES", href: "/rechtliches" },
 ]
 
 const navigationLegal = [
-  { name: "IMPRESSUM", href: "/imprint" },
-  { name: "DATENSCHUTZ", href: "/data-protection" },
-  { name: "AUSSERGERICHTLICHE STREITBEILEGUNG", href: "" },
-  { name: "DISCLAIMER", href: "" },
-  { name: "HAFTUNGSAUSSCHLUSS", href: "" },
-  { name: "WIDERRUFSBELEHRUN", href: "" },
+  { name: "IMPRESSUM", href: "/rechtliches/impressum" },
+  { name: "DATENSCHUTZ", href: "/rechtliches/datenschutz" },
+  { name: "AUSSERGERICHTLICHE STREITBEILEGUNG", href: "/rechtliches/aussergerichtliche-streitbeilegung" },
+  { name: "HAFTUNGSAUSSCHLUSS", href: "/rechtliches/haftungsausschluss" },
+  { name: "WIDERRUFSBELEHRUNG", href: "/rechtliches/widerrufsbelehrung" },
 ]
 
 export default function Header() {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeNavItem, setActiveNavItem] = useState(navigation[0])
-  const [scrolling, setScrolling] = useState(false)
 
   const handleNavigationClick = (item: any) => {
     setMobileMenuOpen(false)
     setActiveNavItem(item)
   }
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const scrollThreshold = 1;
-  //     const shouldScroll = window.scrollY > scrollThreshold;
-
-  //     if (shouldScroll !== scrolling) {
-  //       setScrolling(shouldScroll);
-  //     }
-  //   };
-
-  //   window.addEventListener('scroll', handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener('scroll', handleScroll);
-  //   };
-  // }, [scrolling]);
-
   return (
     <header
-      className={`z-10  bg-white sticky h-auto top-0 ${scrolling ? "" : ""}`}
+      className={`z-10  bg-white sticky h-auto top-0`}
     >
       <nav
         className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 flex items-center justify-between"
@@ -79,40 +60,38 @@ export default function Header() {
           className={"hidden lg:flex lg:gap-x-12 justify-center items-center"}
         >
           {navigation.map((item) => (
-              <div key={item.name} className={`${item.name === "RECHTLICHES" ? "group" : ""} py-5`}>
-                            <Link href={item.href}>
+            <div key={item.name} className={`${item.name === "RECHTLICHES" ? "group" : ""} py-5`}>
+              <Link href={item.href}>
                 <button
                   onClick={() => handleNavigationClick(item)}
-                  className={`${
-                    activeNavItem === item
+                  className={`${pathname.includes(item.href)
                       ? " text-primary-300"
                       : " text-gray-500"
-                  } text-md font-bold leading-6 flex`}
+                    } text-md font-bold leading-6 flex`}
                 >
                   {item.name}
                   {item.name === "RECHTLICHES" && <ChevronDown />}
                 </button>
-                </Link>
-                <div className="invisible absolute z-50 flex w-52 justify-center flex-col my-5 bg-white text-gray-800 shadow-xl group-hover:visible">
-                  <div className="h-1 bg-primary-500"></div>
-                  <div className={"grid grid-rows my-2 mx-3"}>
-                    {navigationLegal.map((item) => (
-                      <Link key={item.name} href={item.href}>
-                        <button
-                          onClick={() => handleNavigationClick(item)}
-                          className={`${
-                            activeNavItem === item
-                              ? " text-primary-300"
-                              : "hover:bg-gray-100 text-gray-500"
-                          } text-sm font-bold leading-6 py-1 w-full text-start`}
-                        >
-                          {item.name}
-                        </button>
-                      </Link>
-                    ))}
-                  </div>
+              </Link>
+              <div className="invisible absolute w-60 z-50 flex justify-center flex-col my-5 bg-white text-gray-800 shadow-xl group-hover:visible">
+                <div className="h-1 bg-primary-500"></div>
+                <div className={"grid grid-rows my-2 mx-3"}>
+                  {navigationLegal.map((item) => (
+                    <Link key={item.name} href={item.href}>
+                      <button
+                        onClick={() => handleNavigationClick(item)}
+                        className={`${pathname.includes(item.href)
+                            ? " text-primary-300"
+                            : "hover:bg-gray-100 text-gray-500"
+                          } text-sm font-bold leading-6 py-1 px-2 w-full text-start`}
+                      >
+                        {item.name}
+                      </button>
+                    </Link>
+                  ))}
                 </div>
               </div>
+            </div>
           ))}
 
           <Link

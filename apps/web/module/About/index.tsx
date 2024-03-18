@@ -181,28 +181,28 @@ export default function About() {
 
   return (
     <>
-      <div className="lg:mx-auto flex-grow mb-auto items-center justify-between">
-        <div className="grid mb-auto w-full bg-persian-indigo lg:h-[50rem] h-auto justify-center items-center">
-          <div className="grid -gap-x-20 sm:pb-10 lg:grid-cols-2 sm:grid-cols-1 bg-persian-indigo w-full lg:h-[40rem] h-auto justify-center">
-            <div className="flex-col">
-              <h1 className="lg:size-[33rem] lg:ml-32 text-white lg:text-[5rem] md:text-[35px] md:ml-5 sm:text-[25px] font-bold font-sans leading-[7rem] sm:ml-10">
+      <div>
+        <div className="bg-persian-indigo">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-24 pb-24 md:pb-44 mx-12 xl:mx-80">
+            <div>
+            <h1 className="text-[3rem] xl:text-[5rem] text-white font-bold">
                 Die #42 und der Bot
               </h1>
-              <p className="lg:size-[33rem] lg:ml-[8rem] text-white lg:text-[2rem] md:text-[35px] md:ml-5 sm:text-[25px] font-bold font-sans sm:ml-10 lg:-mt-[19rem]">           
+              <p className="text-[3rem] text-white font-bold">           
                 Denn #21 ist nur die halbe Wahrheit!
               </p>
             </div>
-            <div className="mx-10 ml-40 text-white text-[5rem]">
+            <div className="ml-16">
               <Image
                 src="/about_image.jpg"
                 alt="Your Company"
                 width={350}
-                height={100}
-                className="mx-auto h-auto w-auto"
+                height={350}
+                className="h-auto w-auto"
               />
               <button
                 type="button"
-                className="relative rounded-md bg-mardi-gras px-6 py-5 text-sm  font-bold text-white shadow-sm hover:bg-pink-600 overflow-hidden group"
+                className="relative rounded-md bg-mardi-gras px-6 py-5 text-sm  font-bold text-white shadow-sm hover:bg-pink-600 overflow-hidden group mt-8"
               >
                 <div className="flex items-center justify-between">
                   <div>HIER KÖNNEN SIE TOKEN KAUFEN</div>
@@ -212,11 +212,9 @@ export default function About() {
           </div>
         </div>
         <div className="mb-auto w-full h-auto justify-center items-center">
-          <div className="lg:flex w-auto lg:mr-0 h-auto justify-center mx-auto">
-            <div className="border-tekhelet border lg:h-auto lg:w-full lg:mb-[1rem] lg:-mt-[13rem] lg:mx-24 mx-[4rem] bg-white flex items-center">
-              {" "}
-              {/* Updated this line */}
-              <div className="lg:ml-16 lg:py-[0.5rem] my-[5rem] lg:mr-40 text-justify lg:w-full lg:mx-10 mx-5 h-auto">
+              <div className="lg:flex w-auto lg:mr-0 h-auto justify-center mx-auto">
+                  <div className="border-tekhelet border mb-16 mt-12 lg:-mt-32 mx-8 md:mx-16 xl:mx-52 bg-white flex items-center">
+                      <div className="p-12">
                 <h1 className="font-bold lg:text-[3rem] text-[1.5rem] h-auto text-left">
                 “Maximierung der Synergie: Die QCI und die NoosphereApp – 
                 Die Stärke der Integration verschiedener Technologien mit schneller und großvolumiger Skalierbarkeit: 

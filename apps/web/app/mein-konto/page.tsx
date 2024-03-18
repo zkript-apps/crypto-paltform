@@ -3,7 +3,7 @@ import { METADATA } from "@/common/constants"
 import MyAccount from "@/module/MyAccount"
 
 export const metadata: Metadata = {
-  title: `My Account - ${METADATA.TITLE}`,
+  title: `Mein Konto - ${METADATA.TITLE}`,
   description: METADATA.DESCRIPTION,
 }
 

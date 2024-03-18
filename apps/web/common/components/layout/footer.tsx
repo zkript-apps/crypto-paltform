@@ -1,17 +1,16 @@
 "use client"
 
-import Image from "next/image"
 import Link from "next/link"
 
 const navigation = {
   company: [
-    { name: "Placeholder", href: "#" },
-    { name: "Placeholder", href: "#" },
-    { name: "Placeholder", href: "#" },
+    { name: "Platzhalter", href: "#" },
+    { name: "Platzhalter", href: "#" },
+    { name: "Platzhalter", href: "#" },
   ],
   legal: [
-    { name: "sample@contact", href: "#" },
-    { name: "sample@contacty", href: "#" },
+    { name: "probe@kontakt.com", href: "#" },
+    { name: "probe@kontakt.com", href: "#" },
     { name: "123456789", href: "#" },
   ],
 }

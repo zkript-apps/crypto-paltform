@@ -1,12 +1,12 @@
 import { Metadata } from "next"
 import { METADATA } from "@/common/constants"
-import Home from "@/module/Home"
+import About from "@/module/About"
 
 export const metadata: Metadata = {
-  title: `Home - ${METADATA.TITLE}`,
+  title: `AGI - ${METADATA.TITLE}`,
   description: METADATA.DESCRIPTION,
 }
 
-export default function HomePage() {
-  return <Home />
+export default function AboutPage() {
+  return <About />
 }
