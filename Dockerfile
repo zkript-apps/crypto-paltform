@@ -3,7 +3,7 @@ FROM node:20.10.0-slim
 ENV API_ORIGINS="http://localhost:3000"
 ENV WEB_URL="http://localhost:3000"
 ENV API_URL="http://localhost:9000"
-ENV MONGO_URL="mongodb+srv://patrick22:patrick22@cluster0.nex1c.mongodb.net/crypto-platform-dev?retryWrites=true&w=majority"
+ENV MONGO_URL="TEST"
  
 WORKDIR /usr/src/app
  
