@@ -2,20 +2,13 @@
 
 import OrderModal from "@/common/components/modals/OrderModal"
 import RegisterWalletModal from "@/common/components/modals/RegisterWalletModal"
-import TransferDetailsModal from "@/common/components/modals/TransferDetailsModal"
 import { useState } from "react"
+import Table from "./Table"
+import Information from "./Information"
 
 export default function MyAccount() {
   const [isWalletRegisterOpen, setIsWalletRegisterOpen] = useState(false)
   const [isOrderOpen, setIsOrderOpen] = useState(false)
-
-  function walletRegisterClick(): void {
-    setIsWalletRegisterOpen(true)
-  }
-
-  function orderClick(): void {
-    setIsOrderOpen(true)
-  }
 
   return (
     <>
@@ -26,43 +19,15 @@ export default function MyAccount() {
               AGI | Mein Konto
             </h1>
 
-            <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-tekhelet border justify-center items-center flex">
-              <button
-                onClick={() => walletRegisterClick()}
-                type="button"
-                className="text-[1.2rem] relative shadow-lg rounded-md bg-mardi-gras px-5 py-4 font-normal text-white hover:bg-pink-600 overflow-hidden group"
-              >
-                Wallet Registrieren
-              </button>
-            </div>
-            <div className="bg-white h-auto py-8 rounded-2xl mt-5 border-tekhelet border justify-center items-center flex">
-              <button
-                onClick={() => orderClick()}
-                type="button"
-                className="text-[1.2rem] relative shadow-lg rounded-md bg-mardi-gras px-16 py-4 font-normal text-white hover:bg-pink-600 overflow-hidden group"
-              >
-                Befehl
-              </button>
-            </div>
-
-            <div className="bg-white flex-col w-full h-auto py-10 rounded-2xl mt-5 border-tekhelet border justify-center items-center flex">
-              <h1 className="underline text-[2rem] font-extrabold">
-                Wallet Übersicht:
-              </h1>
-              <h1 className="text-md font-normal mt-10">
-              Nicht in der Wallet eingeloggt.
-              </h1>
-              <h1 className="text-md font-normal mt-8">
-                Balance Stck: 0 x Preis: 1.3340 € = Wert: 0.00 €
-              </h1>
-              <div className="grid grid-cols-3 gap-5 text-md font-normal mt-5">
-                <h1>Investition: 0.00 €</h1>
-                <h1>Ø Preis: 0.0000 €</h1>
-                <h1 className="font-bold text-celestial-blue">
-                Wertveränderung: 0 %
-                </h1>
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
+              <div className="lg:col-span-3 bg-white rounded-2xl p-5">
+                <Table />
+              </div>
+              <div className="lg:col-span-1">
+                <Information />
               </div>
             </div>
+            
             <div className="bg-white flex-col w-full font-semibold h-auto py-10 rounded-2xl mt-5 border-primary-500 border flex text-justify">
               <div className="mx-10">
                 <h1 className="text-[2.3rem] font-extrabold">

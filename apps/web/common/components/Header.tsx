@@ -6,6 +6,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline"
 import Link from "next/link"
 import { ChevronDown } from "lucide-react"
 import { usePathname } from "next/navigation"
+import useTorusStore from "../store/useTorusStore"
+import useAddUser from "../hooks/user/useAddUser"
 
 const navigation = [
   { name: "HEIM", href: "/heim" },
@@ -24,12 +26,37 @@ const navigationLegal = [
 
 export default function Header() {
   const pathname = usePathname();
+  const torus = useTorusStore((state) => state.torus);
+  const user = useTorusStore((state) => state.user);
+  const setUser = useTorusStore((state) => state.setUser);
+  const { mutate, isPending } = useAddUser();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [activeNavItem, setActiveNavItem] = useState(navigation[0])
 
   const handleNavigationClick = (item: any) => {
     setMobileMenuOpen(false)
     setActiveNavItem(item)
+  }
+
+  const logout = async () => {
+    try {
+      await torus?.logout()
+      setUser(null);
+      window.location.href = "/";
+    } catch (error) {
+      window.location.href = "/";
+    }
+  }
+
+  const login = async () => {
+    try {
+      const walletIdArr = await torus?.login();
+      const user = await torus?.getUserInfo("");
+      mutate({ walletId: walletIdArr ?  walletIdArr[0] as string : "", email: user ?  user.email : ""  })
+      window.location.href = "/mein-konto";
+    } catch (error) {
+      window.location.href = "/";
+    }
   }
 
   return (
@@ -94,12 +121,21 @@ export default function Header() {
             </div>
           ))}
 
-          <Link
-            href="#"
+          {!user ? (
+          <button
+          onClick={() => login()}
+          className="mr-24 text-md font-bold leading-6 text-gray-500"
+        >
+          EINLOGGEN
+        </button>
+          ) : (
+            <button
+            onClick={() => logout()}
             className="mr-24 text-md font-bold leading-6 text-gray-500"
           >
-            EINLOGGEN
-          </Link>
+            AUSLOGGEN
+          </button>
+          )}
         </div>
       </nav>
       <Dialog
