@@ -5,8 +5,10 @@ import QueryClientWrapper from "@/common/components/QueryClientWrapper"
 import GlobalModalWrapper from "@/common/components/GlobalModalWrapper"
 import { Toaster } from "react-hot-toast"
 import React from "react"
-import Header from "@/module/LandingPage/components/Header"
 import Footer from "@/common/components/layout/footer"
+import TorusWrapper from "@/common/components/TorusWrapper"
+import Header from "@/common/components/Header"
+import AuthVerifyWrapper from "@/common/components/AuthVerifyWrapper"
 
 const manrope = Manrope({ subsets: ["latin"] })
 
@@ -25,13 +27,17 @@ export default async function RootLayout({
       {/* <link rel="icon" type="image/x-icon" href={LOGO_SINGLE_IMAGE} /> */}
       <body className={manrope.className}>
         <Toaster />
-        <QueryClientWrapper>
-          <GlobalModalWrapper>
-            <Header />
-            <div className="min-h-screen">{children}</div>
-            <Footer />
-          </GlobalModalWrapper>
-        </QueryClientWrapper>
+        <TorusWrapper>
+          <QueryClientWrapper>
+            <AuthVerifyWrapper>
+              <GlobalModalWrapper>
+                <Header />
+                <div className="min-h-screen">{children}</div>
+                <Footer />
+              </GlobalModalWrapper>
+            </AuthVerifyWrapper>
+          </QueryClientWrapper>
+        </TorusWrapper>
       </body>
     </html>
   )

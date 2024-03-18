@@ -1,23 +1,23 @@
 "use client"
 
-import Image from "next/image"
+import Link from "next/link"
 
 const navigation = {
   company: [
-    { name: "Placeholder", href: "#" },
-    { name: "Placeholder", href: "#" },
-    { name: "Placeholder", href: "#" },
+    { name: "Platzhalter", href: "#" },
+    { name: "Platzhalter", href: "#" },
+    { name: "Platzhalter", href: "#" },
   ],
   legal: [
-    { name: "sample@contact", href: "#" },
-    { name: "sample@contacty", href: "#" },
+    { name: "probe@kontakt.com", href: "#" },
+    { name: "probe@kontakt.com", href: "#" },
     { name: "123456789", href: "#" },
   ],
 }
 
 export default function Footer() {
   return (
-    <footer className="bottom-0  bg-black" aria-labelledby="footer-heading">
+    <footer className="bottom-0 bg-[#130c21]" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">
         Footer
       </h2>
@@ -39,36 +39,36 @@ export default function Footer() {
 
           <div className="grid grid-cols-2 gap-8 xl:col-span-2 lg:ml-20 ml-10 mt-5">
             <div>
-              <h3 className="text-sm font-extrabold leading-6 text-primary-500">
-                PURSUE
+              <h3 className="text-sm font-extrabold leading-6 text-celestial-blue">
+              VERFOLGEN
               </h3>
               <ul role="list" className="mt-4 space-y-1">
                 {navigation.company.map((item) => (
                   <li key={item.name}>
-                    <a
+                    <Link
                       href={item.href}
                       className="text-md font-bold leading-6 text-gray-300 hover:text-white"
                     >
                       {item.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="md:grid md:grid-cols-2 md:gap-20">
               <div>
-                <h3 className="text-sm font-extrabold leading-6 text-primary-500">
-                  CONTACT
+                <h3 className="text-sm font-extrabold leading-6 text-celestial-blue">
+                KONTAKT
                 </h3>
                 <ul role="list" className="mt-4 space-y-1">
                   {navigation.legal.map((item) => (
                     <li key={item.name}>
-                      <a
+                      <Link
                         href={item.href}
                         className="text-md font-bold leading-6 text-gray-300 hover:text-white"
                       >
                         {item.name}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
@@ -77,13 +77,13 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="bg-primary-950 h-auto">
+      <div className="bg-tekhelet h-auto">
         <div className="mx-auto max-w-7xl text-center text-sm">
-          <div className="h-[3rem] text-white grid lg:grid-cols-7 justify-center items-center md:grid-cols-4 grid-cols-2 lg:ml-24">
-            <a>Change privacy settings</a>
-            <a>History of privacy settings</a>
-            <a>Revoke consent</a>
-            <a>Reset password</a>
+          <div className="h-[3rem] text-white grid lg:flex justify-center lg:justify-start items-center md:grid-cols-4 grid-cols-2 lg:ml-24 lg:space-x-12">
+            <Link href="#">Datenschutzeinstellungen ändern</Link>
+            <Link href="#">Verlauf der Datenschutzeinstellungen</Link>
+            <Link href="#">Einwilligung widerrufen</Link>
+            <Link href="#">Passwort zurücksetzen</Link>
           </div>
         </div>
       </div>

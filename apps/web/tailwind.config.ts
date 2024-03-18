@@ -17,6 +17,11 @@ const config: Config = {
     },
     extend: {
       colors: {
+        "persian-indigo": "#3D2177",
+        tekhelet: "#512683",
+        "mardi-gras": "#910785",
+        persimmon: "#EA5A00",
+        "celestial-blue": "#34A0DB",  
         primary: {
           50: "#b896be",
           100: "#a980b0",
