@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   cp-api:
-    image: jpmadrigal/cp-api-img:latest
+    image: cp-api-img-local:latest
     container_name: cp-api
     restart: unless-stopped
     env_file:
