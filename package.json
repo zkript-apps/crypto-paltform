@@ -6,7 +6,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "start": "turbo start",
-    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "dc-api": "docker-compose -f docker-compose-api.yml up -d"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
