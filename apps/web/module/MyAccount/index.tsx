@@ -5,6 +5,7 @@ import RegisterWalletModal from "@/common/components/modals/RegisterWalletModal"
 import { useState } from "react"
 import Table from "./Table"
 import Information from "./Information"
+import TokenChart from "./components/TokenChart"
 
 export default function MyAccount() {
   const [isWalletRegisterOpen, setIsWalletRegisterOpen] = useState(false)
@@ -27,7 +28,11 @@ export default function MyAccount() {
                 <Information />
               </div>
             </div>
-            
+            <div className="bg-white flex-col w-full font-semibold h-auto py-10 rounded-2xl mt-5 border-primary-500 border flex text-justify">
+              <div className="mx-10">
+                <TokenChart />
+              </div>
+            </div>
             <div className="bg-white flex-col w-full font-semibold h-auto py-10 rounded-2xl mt-5 border-primary-500 border flex text-justify">
               <div className="mx-10">
                 <h1 className="text-[2.3rem] font-extrabold">
